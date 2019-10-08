@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <left>
+        <VBox prefHeight="-Infinity" prefWidth="50" style="-fx-background-color: #c0392b; -fx-border-width: 3px; -fx-border-color: black;" BorderPane.alignment="CENTER" />
+    </left>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e74c3c; -fx-border-color: black; -fx-border-width: 3px 3px 0px 0;">
+                    <children>
+                        <Label fx:id="overzichtLabel" alignment="CENTER" maxWidth="Infinity" prefHeight="Infinity" style="-fx-border-color: black; -fx-background-color: #FF6C5C; -fx-border-width: 0 3px 3px 0;" text="Overzicht" HBox.hgrow="ALWAYS"
+                                onMouseClicked="#gotoOverview">
+                            <font>
+                                <Font size="35.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" maxWidth="Infinity" prefHeight="Infinity" style="-fx-border-color: black; -fx-background-color: #e74c3c; -fx-border-width: 0 0 0 0;" text="Invoeren" HBox.hgrow="ALWAYS">
+                            <font>
+                                <Font size="35.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e74c3c; -fx-border-color: black; -fx-border-width: 0px 3px 3px 0;">
+                    </HBox>
+            </children></VBox>
+    </center>
+</BorderPane>
