@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/KilometerTeller.iml" filepath="$PROJECT_DIR$/KilometerTeller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/KilometerRegistratie.iml" filepath="$PROJECT_DIR$/KilometerRegistratie.iml" />
     </modules>
   </component>
 </project>
