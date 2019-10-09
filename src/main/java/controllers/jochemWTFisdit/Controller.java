@@ -1,4 +1,4 @@
-package sample;
+package main.java.controllers.jochemWTFisdit;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
