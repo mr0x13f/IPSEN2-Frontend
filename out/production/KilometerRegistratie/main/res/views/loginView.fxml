@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="views.LoginView"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.views.LoginView">
+   <children>
+      <TextField layoutX="226.0" layoutY="92.0" style="-fx-pref-height: 25px; -fx-pref-width: 240px;" />
+      <TextField layoutX="226.0" layoutY="145.0" style="-fx-pref-height: 25px; -fx-pref-width: 240px;" />
+      <Button id="loginButton" layoutX="226.0" layoutY="180.0" mnemonicParsing="false" onAction="#Login" style="-fx-pref-height: 30px; -fx-pref-width: 90px;" text="Login" />
+       <Button layoutX="326.0" layoutY="180.0" mnemonicParsing="false" style="-fx-pref-height: 30px; -fx-pref-width: 90px;" text="Register" />
+      <Label layoutX="166.0" layoutY="96.0" text="E-mail" />
+       <Label layoutX="166.0" layoutY="149.0" text="Password" />
+   </children>
 </AnchorPane>
