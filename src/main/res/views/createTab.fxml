@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.controllers.CreateTabController"
+            prefHeight="400.0" prefWidth="600.0"
+            style="-fx-border-color: ababab; -fx-background-color: #efefef; -fx-border-width: 1px;">
+    <children>
+        <VBox prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label text="Distance in KM" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
+                <TextField fx:id="textDistance" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
+                <Label text="Vehicle license plate" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
+                <TextField fx:id="textLicensePlate" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
+                <Label text="Destination" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
+                <TextField fx:id="textDestination" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
+                <Label text="Rate ID" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
+                <TextField fx:id="textRateId" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
+                <Label text="Project ID" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
+                <TextField fx:id="textProjectId" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
+                <Label text="Description" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
+                <TextField fx:id="Description" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
+                <Label text="Parking cost" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
+                <TextField fx:id="textParkingCost" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
+                <Label text="Other cost" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
+                <TextField fx:id="textOtherCost" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
+            </children>
+        </VBox>
+    </children>
+
+
+</AnchorPane>

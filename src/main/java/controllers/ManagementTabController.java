@@ -3,9 +3,9 @@ package main.java.controllers;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 
-public class CreateTabController {
+public class ManagementTabController {
 
-    @FXML private Tab createTab;
+    @FXML private Tab managementTab;
 
     public void saveJourney(){}
 
