@@ -18,14 +18,14 @@ public class Controller {
     @FXML
     private void gotoOverview() throws IOException {
         Stage stage = (Stage) overzichtLabel.getScene().getWindow();
-        Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/views/homeView.fxml"));
+        Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/unusedViews/homeView.fxml"));
         stage.setScene(new Scene(overviewScene, 1200, 900));
     }
 
     @FXML
     private void gotoEnterKilometers() throws IOException {
         Stage stage = (Stage) enterKilomentersLabel.getScene().getWindow();
-        Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/views/createView.fxml"));
+        Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/unusedViews/createView.fxml"));
         stage.setScene(new Scene(overviewScene, 1200, 900));
     }
 

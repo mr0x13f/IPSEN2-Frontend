@@ -10,13 +10,16 @@
     <AnchorPane maxWidth="100.0" minHeight="0.0" minWidth="100.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #fb4c3c;;" />
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <TabPane fx:id="tabPane" prefHeight="100.0" prefWidth="100.0" style="-fx-font-size: 3.0em; -fx-tab-min-width: 520px; -fx-tab-min-height: 60px; -fx-tab-max-height: 60px; -fx-tab-max-width: 500px;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TabPane fx:id="tabPane" prefHeight="100.0" prefWidth="100.0" style="-fx-font-size: 3.0em; -fx-tab-min-width: 340px; -fx-tab-min-height: 60px; -fx-tab-max-height: 60px; -fx-tab-max-width: 500px;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <tabs>
                   <Tab fx:id="createTab" style="-fx-background-color: #efefef; -fx-border-color: #ababab; -fx-border-width: 1px;" text="Invoeren">
                       <fx:include fx:id="createInclude" source="createTab.fxml" />
                   </Tab>
                   <Tab fx:id="overviewTab" style="-fx-background-color: #efefef; -fx-border-color: #ababab; -fx-border-width: 1px;" text="Overzicht">
                       <fx:include fx:id="overviewInclude" source="overviewTab.fxml" />
+                  </Tab>
+                  <Tab fx:id="managementTab" style="-fx-background-color: #efefef; -fx-border-color: #ababab; -fx-border-width: 1px;" text="Beheer">
+                      <fx:include fx:id="managementInclude" source="managementTab.fxml" />
                   </Tab>
               </tabs>
             </TabPane>
