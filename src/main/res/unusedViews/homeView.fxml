@@ -10,19 +10,19 @@
 <?import javafx.geometry.Insets?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.Controller">
    <left>
-      <VBox prefHeight="-Infinity" prefWidth="50" style="-fx-background-color: #c0392b; -fx-border-width: 3px; -fx-border-color: black;" BorderPane.alignment="CENTER" />
+      <VBox prefHeight="-Infinity" prefWidth="50" style="-fx-background-color: #c0392b; -fx-border-width: 1px; -fx-border-color: black;" BorderPane.alignment="CENTER" />
    </left>
    <center>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e74c3c; -fx-border-color: black; -fx-border-width: 3px 3px 0px 0;">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e74c3c; -fx-border-color: black; -fx-border-width: 1px 1px 0px 0;">
                <children>
-                  <Label alignment="CENTER" maxWidth="Infinity" prefHeight="Infinity" style="-fx-border-color: black; -fx-background-color: #e74c3c; -fx-border-width: 0 3px 0 0;" text="Overzicht" HBox.hgrow="ALWAYS">
+                  <Label alignment="CENTER" maxWidth="Infinity" prefHeight="Infinity" style="-fx-border-color: black; -fx-background-color: #e74c3c; -fx-border-width: 0 1px 0 0;" text="Overzicht" HBox.hgrow="ALWAYS">
                      <font>
                         <Font size="35.0" />
                      </font>
                   </Label>
-                  <Label fx:id="enterKilomentersLabel" alignment="CENTER" maxWidth="Infinity" prefHeight="Infinity" style="-fx-border-color: black; -fx-background-color: #FF6C5C; -fx-border-width: 0 0  3px 0;" text="Invoeren" HBox.hgrow="ALWAYS"
+                  <Label fx:id="enterKilomentersLabel" alignment="CENTER" maxWidth="Infinity" prefHeight="Infinity" style="-fx-border-color: black; -fx-background-color: #FF6C5C; -fx-border-width: 0 0  1px 0;" text="Invoeren" HBox.hgrow="ALWAYS"
                         onMouseClicked="#gotoEnterKilometers">
                      <font>
                         <Font size="35.0" />
@@ -33,7 +33,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e74c3c; -fx-border-color: black; -fx-border-width: 0px 3px 3px 0;">
+            <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #e74c3c; -fx-border-color: black; -fx-border-width: 0px 1px 1px 0;">
                <padding><Insets bottom="10"></Insets></padding>
                <children>
                   <Label alignment="BOTTOM_LEFT" prefHeight="Infinity" maxWidth="Infinity" text="Datum" HBox.hgrow="ALWAYS">
