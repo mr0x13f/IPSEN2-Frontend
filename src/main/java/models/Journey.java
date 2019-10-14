@@ -1,9 +1,9 @@
 package main.java.models;
 
-public class JourneyModel {
+public class Journey {
 
     private int journeyId;
-    private int kilometers;
+    private int distance;
     private String vehicleLicensePlate;
     private String destination;
     private int rateId;
@@ -12,6 +12,17 @@ public class JourneyModel {
     private double parkingCost;
     private double otherCost;
     private int creatorId;
+
+    public Journey(String distance, String licensePlate, String destination, String rateId, String projectId, String description, String parkingCost, String otherCost) {
+        this.distance = Integer.parseInt(distance);
+        this.vehicleLicensePlate = licensePlate;
+        this.destination = destination;
+        this.rateId = Integer.parseInt(rateId);
+        this.projectId = Integer.parseInt(projectId);
+        this.description = description;
+        this.parkingCost = Double.parseDouble(parkingCost);
+        this.otherCost = Double.parseDouble(otherCost);
+    }
 
     public int getJourneyId() {
         return journeyId;
@@ -22,11 +33,11 @@ public class JourneyModel {
     }
 
     public int getKilometers() {
-        return kilometers;
+        return distance;
     }
 
     public void setKilometers(int kilometers) {
-        this.kilometers = kilometers;
+        this.distance = kilometers;
     }
 
     public String getVehicleLicensePlate() {
