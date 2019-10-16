@@ -4,8 +4,15 @@ public class UserModel {
 
     private int UserId;
     private String email;
-    private String password;
     private String name;
+    private String password;
+
+    public UserModel(int userId, String name, String email, String password) {
+        UserId = userId;
+        this.email = email;
+        this.password = password;
+        this.name = name;
+    }
 
     public int getUserId() {
         return UserId;
