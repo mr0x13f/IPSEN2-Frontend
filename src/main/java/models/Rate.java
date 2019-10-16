@@ -1,6 +1,6 @@
 package main.java.models;
 
-public class RateModel {
+public class Rate {
 
     private String name;
     private double amount;

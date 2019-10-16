@@ -1,6 +1,6 @@
 package main.java.models;
 
-public class VehicleModel {
+public class Vehicle {
 
     private String licensePlate;
     private String type;

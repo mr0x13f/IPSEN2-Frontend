@@ -1,6 +1,6 @@
 package main.java.models;
 
-public class UserModel {
+public class User {
 
     private int UserId;
     private String email;
