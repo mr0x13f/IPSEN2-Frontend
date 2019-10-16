@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.models.UserModel;
+import main.java.models.User;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
@@ -44,7 +44,7 @@ public class RegisterController {
             try{
                 byte[] hash = hashPassword(password);
                  String hashedPassword = hash.toString();
-                UserModel user = new UserModel(0, email, fullName, hashedPassword);
+                User user = new User(0, email, fullName, hashedPassword);
 
                 System.out.println(user.getEmail());
                 System.out.println(user.getName());
