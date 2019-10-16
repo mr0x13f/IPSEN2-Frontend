@@ -7,8 +7,8 @@ public class User {
     private String name;
     private String password;
 
-    public UserModel(int userId, String name, String email, String password) {
-        UserId = userId;
+    public User(int userId, String name, String email, String password) {
+        this.UserId = userId;
         this.email = email;
         this.password = password;
         this.name = name;
