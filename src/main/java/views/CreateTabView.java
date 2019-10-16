@@ -20,20 +20,34 @@ public class CreateTabView {
 
     @FXML
     private void saveJourney(){
-        String distance = textDistance.getText();
+
+        int distance = 0;
         String licensePlate = textLicensePlate.getText();
         String destination = textDestination.getText();
-        String rateId = textRateId.getText();
-        String projectId = textProjectId.getText();
+        int rateId = 0;
+        int projectId = 0;
         String description = textDescription.getText();
-        String parkingCost = textParkingCost.getText();
-        String otherCost = textOtherCost.getText();
+        double parkingCost = 0.0;
+        double otherCost = 0.0;
 
-        createTabController.saveJourney(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost);
-
+        try {
+            distance = Integer.parseInt(textDistance.getText());
+            rateId = Integer.parseInt(textRateId.getText());
+            projectId = Integer.parseInt(textProjectId.getText());
+            parkingCost = Double.parseDouble(textParkingCost.getText());
+            otherCost = Double.parseDouble(textOtherCost.getText());
+            createTabController.saveJourney(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost);
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Not a number");
+        }
     }
 
+    //waar is dit voor?
     private void OverviewTabView(){
 
     }
+
+
+
 }

@@ -13,15 +13,15 @@ public class Journey {
     private double otherCost;
     private int creatorId;
 
-    public Journey(String distance, String licensePlate, String destination, String rateId, String projectId, String description, String parkingCost, String otherCost) {
-        this.distance = Integer.parseInt(distance);
+    public Journey(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost) {
+        this.distance = distance;
         this.vehicleLicensePlate = licensePlate;
         this.destination = destination;
-        this.rateId = Integer.parseInt(rateId);
-        this.projectId = Integer.parseInt(projectId);
+        this.rateId = rateId;
+        this.projectId = projectId;
         this.description = description;
-        this.parkingCost = Double.parseDouble(parkingCost);
-        this.otherCost = Double.parseDouble(otherCost);
+        this.parkingCost = parkingCost;
+        this.otherCost = otherCost;
     }
 
     public int getJourneyId() {
