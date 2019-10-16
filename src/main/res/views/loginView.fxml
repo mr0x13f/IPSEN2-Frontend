@@ -30,10 +30,15 @@
                 <Font name="System Bold" size="24.0" />
             </font>
         </Button>
-      <Label fx:id="noAccountLabel" alignment="CENTER" layoutX="674.0" layoutY="509.0" text="Nog geen account? Registreer hier!" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="500.0" onMouseClicked="#goToRegisterView">
+      <Label fx:id="noAccountLabel" alignment="CENTER" layoutX="674.0" layoutY="509.0" onMouseClicked="#goToRegisterView" text="Nog geen account? Registreer hier!" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="500.0">
          <font>
             <Font name="System Italic" size="14.0" />
          </font>
       </Label>
+      <Button fx:id="autoLoginButton" layoutX="523.0" layoutY="141.0" mnemonicParsing="false" onAction="#autoLogin" text="auto login (voor testen)">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>
