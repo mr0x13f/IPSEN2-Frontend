@@ -13,11 +13,11 @@
          <font>
             <Font size="20.0" />
          </font></TextField>
-      <PasswordField fx:id="passwordTextfieldRegister" layoutX="377.0" layoutY="271.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="350.0">
+      <PasswordField fx:id="passwordTextfieldRegister" layoutX="377.0" layoutY="271.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="400.0">
          <font>
             <Font size="20.0" />
          </font></PasswordField>
-      <PasswordField fx:id="confirmPasswordTextfieldRegsiter" layoutX="377.0" layoutY="323.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="400.0">
+      <PasswordField fx:id="confirmPasswordTextfieldRegsiter" layoutX="377.0" layoutY="323.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="450.0">
          <font>
             <Font size="20.0" />
          </font></PasswordField>
@@ -25,22 +25,32 @@
          <font>
             <Font name="System Bold" size="28.0" />
          </font></Label>
-      <Label layoutX="235.0" layoutY="263.0" text="Password" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="350.0">
+      <Label layoutX="235.0" layoutY="263.0" text="Password" AnchorPane.leftAnchor="425.0" AnchorPane.topAnchor="400.0">
          <font>
             <Font name="System Bold" size="28.0" />
          </font></Label>
-      <Label layoutX="235.0" layoutY="327.0" text="Confirm Password" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="400.0">
+      <Label layoutX="235.0" layoutY="327.0" text="Confirm Password" AnchorPane.leftAnchor="310.0" AnchorPane.topAnchor="450.0">
          <font>
             <Font name="System Bold" size="28.0" />
          </font></Label>
-      <Button fx:id="registerButton" layoutX="549.0" layoutY="504.0" mnemonicParsing="false" onAction="#registerNewUser" text="Register" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="475.0">
+      <Button fx:id="registerButton" layoutX="549.0" layoutY="504.0" mnemonicParsing="false" onAction="#registerNewUser" text="Register" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="525.0">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <Label fx:id="alreadyHaveAccount" alignment="CENTER" layoutX="674.0" layoutY="560.0" onMouseClicked="#goToLoginView" text="I already have an account!" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="550.0">
+      <Label fx:id="alreadyHaveAccount" alignment="CENTER" layoutX="674.0" layoutY="560.0" onMouseClicked="#goToLoginView" text="I already have an account!" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="600.0">
          <font>
             <Font name="System Italic" size="14.0" />
          </font></Label>
+      <Label layoutX="428.0" layoutY="325.0" text="Full name" AnchorPane.topAnchor="325.0">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fullNameTextfieldRegister" layoutX="613.0" layoutY="339.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="325.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>
