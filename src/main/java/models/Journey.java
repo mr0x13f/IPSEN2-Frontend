@@ -1,5 +1,8 @@
 package main.java.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Journey {
 
     private int journeyId;
@@ -12,8 +15,12 @@ public class Journey {
     private double parkingCost;
     private double otherCost;
     private int creatorId;
+    private List observers;
+    private boolean isBilled; //Nog toevoegen in de rest van de code
 
-    public Journey(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost) {
+
+
+    public Journey(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, Boolean isBilled) {
         this.distance = distance;
         this.vehicleLicensePlate = licensePlate;
         this.destination = destination;
@@ -22,6 +29,10 @@ public class Journey {
         this.description = description;
         this.parkingCost = parkingCost;
         this.otherCost = otherCost;
+        this.isBilled = isBilled;
+
+        //observer pattern
+        //this.observers = new ArrayList<ViewInterface>();
     }
 
     public int getJourneyId() {
@@ -103,4 +114,11 @@ public class Journey {
     public void setCreatorId(int creatorId) {
         this.creatorId = creatorId;
     }
+
+//    private void notifyObservers(){
+//        for (int i = 0; i< observers.size(); i++){
+//            observers.get(i).update(this);
+//        }
+//    }
+
 }
