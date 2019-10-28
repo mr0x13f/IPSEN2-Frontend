@@ -9,11 +9,11 @@
 
 <AnchorPane maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" style="-fx-background-color: #e74c3c;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.LoginController">
     <children>
-        <TextField layoutX="377.0" layoutY="187.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="275.0">
+        <TextField fx:id="emailTextfieldLogin" layoutX="377.0" layoutY="187.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="275.0">
             <font>
                 <Font size="20.0" />
             </font></TextField>
-        <PasswordField layoutX="377.0" layoutY="271.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="350.0">
+        <PasswordField fx:id="passwordTextfieldLogin" layoutX="377.0" layoutY="271.0" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="350.0">
             <font>
                 <Font size="20.0" />
             </font></PasswordField>
@@ -25,7 +25,7 @@
             <font>
                 <Font name="System Bold" size="28.0" />
             </font></Label>
-        <Button layoutX="549.0" layoutY="504.0" mnemonicParsing="false" text="Login" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="425.0">
+        <Button layoutX="549.0" layoutY="504.0" mnemonicParsing="false" onAction="#login" text="Login" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="425.0">
             <font>
                 <Font name="System Bold" size="24.0" />
             </font>
