@@ -1,4 +1,4 @@
-package main.java.Overig;
+package main.java.models;
 
 public class Password{
 

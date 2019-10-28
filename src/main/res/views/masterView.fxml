@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.SettingsController">
   <items>
-    <AnchorPane maxWidth="100.0" minHeight="0.0" minWidth="100.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #fb4c3c;;" />
+    <AnchorPane maxWidth="100.0" minHeight="0.0" minWidth="100.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #fb4c3c;;">
+         <children>
+            <AnchorPane onMouseClicked="#settingsButtonClick" onMouseEntered="#settingsButtonAnimation" fx:id="settingsButton" layoutX="17.0" layoutY="14.0" AnchorPane.bottomAnchor="10.0">
+               <children>
+                  <ImageView fx:id="settingsImageView" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                          <Image url="@../images/gear.png" />
+                      </image>
+                  </ImageView>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </AnchorPane>
+         </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
             <TabPane fx:id="tabPane" prefHeight="100.0" prefWidth="100.0" style="-fx-font-size: 3.0em; -fx-tab-min-width: 340px; -fx-tab-min-height: 60px; -fx-tab-max-height: 60px; -fx-tab-max-width: 500px;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
