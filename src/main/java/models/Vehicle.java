@@ -10,9 +10,8 @@ public class VehicleModel implements VehicleObservable {
 
     private List<ManagementTabObserver> observers = new ArrayList<>();
 
-
-    private String licensePlate= "leeg";
-    private String type = "leeg";
+    private String licensePlate;
+    private String type;
 
     public void setType(String type) {this.type = type;}
 
