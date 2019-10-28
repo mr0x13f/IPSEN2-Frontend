@@ -12,13 +12,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import main.java.controllers.ManagementTabController;
 import main.java.models.Project;
+import main.java.models.Vehicle;
 import main.java.observables.VehicleObservable;
 import main.java.observers.ManagementTabObserver;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ManagementTabView implements Initializable, ManagementTabObserver {
+public class ManagementTabView implements Initializable {
 
     ManagementTabController ManTCon = new ManagementTabController();
 
@@ -32,16 +33,7 @@ public class ManagementTabView implements Initializable, ManagementTabObserver {
     ObservableList<String> DeleteCarList = FXCollections
             .observableArrayList();
 
-    @FXML
-    Label typeLabel;
-    @FXML
-    Label licenseLabel;
-    @FXML
-    Label companyLabel;
-    @FXML
-    Label projectLabel;
-    @FXML
-    Label rateLabel;
+
 
     @FXML
     Button AddCar;
@@ -50,14 +42,6 @@ public class ManagementTabView implements Initializable, ManagementTabObserver {
     @FXML
     Button DeleteCar;
 
-    @FXML
-    TextField SecondCarInput;
-    @FXML
-    TextField SecondLicenseInput1;
-    @FXML
-    TextField SecondLicenseInput2;
-    @FXML
-    TextField SecondLicenseInput3;
 
     @FXML
     TextField addProjectTextField;
@@ -82,17 +66,15 @@ public class ManagementTabView implements Initializable, ManagementTabObserver {
     @FXML
     private ChoiceBox<String> DeleteCarBox;
 
-    public ManagementTabView(){
+    public ManagementTabView() {
 
     }
-
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         //
-        ManTCon.register(this);
 
         //Toevoegen gegevens
         CompanyBox.setValue("no company");
@@ -112,17 +94,17 @@ public class ManagementTabView implements Initializable, ManagementTabObserver {
 
         String Project = ProjectBox.getValue();
 
-        try{
+        try {
             float Rate = Float.valueOf(textRate.getText());
 
             ManTCon.CombineDetails(Company, Project, Rate);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Het moet een getal zijn");
         }
 
     }
 
-    public void CombineCarDetails(){
+    public void CombineCarDetails() {
         String carName = CarInput.getText();
 
         String licenseCar = LicenseInput1.getText() + "-" + LicenseInput2.getText() + "-" + LicenseInput3.getText();
@@ -135,7 +117,7 @@ public class ManagementTabView implements Initializable, ManagementTabObserver {
     }
 
 
-    public void AddProjectToDropdown(){
+    public void AddProjectToDropdown() {
 
         String projectName = addProjectTextField.getText();
         ProjectList.add(projectName);
@@ -143,7 +125,7 @@ public class ManagementTabView implements Initializable, ManagementTabObserver {
     }
 
 
-    public void AddCarToDeleteCars(){
+    public void AddCarToDeleteCars() {
         String carName = CarInput.getText();
 
         DeleteCarList.add(carName);
@@ -151,67 +133,55 @@ public class ManagementTabView implements Initializable, ManagementTabObserver {
 
 
 
-    private void addVehicle(){
+    private void addVehicle() {
 
     }
 
-    private void updateVehicle(){
+    private void updateVehicle() {
 
     }
 
-    private void deleteVehicle(){
+    private void deleteVehicle() {
 
     }
 
-    private void addRate(){
+    private void addRate() {
 
     }
 
-    private void updateRate(){
+    private void updateRate() {
 
     }
 
-    private void deleteRate(){
+    private void deleteRate() {
 
     }
 
-    private void addCompany(){
+    private void addCompany() {
 
     }
 
-    private void updateCompany(){
+    private void updateCompany() {
 
     }
 
-    private void deleteCompany(){
+    private void deleteCompany() {
 
     }
 
-    private void addProject(){
-
-
-    }
-
-    private void updateProject(){
+    private void addProject() {
 
     }
 
-    private void deleteProject(){
+    private void updateProject() {
 
     }
 
-
-    @Override
-    public void update(VehicleObservable vo) {
-        setPersonalInfoLabels(vo.getType(), vo.getLicensePlate());
+    private void deleteProject() {
 
     }
 
-    public void setPersonalInfoLabels(String typeCar, String licenseCar){
-        typeLabel.setText("Type:                "+ typeCar);
-        licenseLabel.setText("License Plate:    "+ licenseCar);
-        companyLabel.setText("Company:              ");
-        projectLabel.setText("Project:              ");
-        rateLabel.setText("Rate:                ");
-    }
 }
+
+
+

@@ -6,7 +6,7 @@ import main.java.observers.ManagementTabObserver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VehicleModel implements VehicleObservable {
+public class Vehicle implements VehicleObservable {
 
     private List<ManagementTabObserver> observers = new ArrayList<>();
 

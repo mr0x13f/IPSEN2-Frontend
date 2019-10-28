@@ -18,38 +18,28 @@
 
                     <children>
 
-                        <Button fx:id="DeleteCar" layoutX="700.0" layoutY="1440.0" prefHeight="31.0" prefWidth="200.0" text="Verwijder car">
+                        <Button fx:id="DeleteCar" layoutX="700.0" layoutY="1040.0" prefHeight="31.0" prefWidth="200.0" text="Verwijder car">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Button>
-                        <Button fx:id="AddCar" layoutX="700.0" layoutY="575.0" onAction="#CombineCarDetails" prefHeight="31.0" prefWidth="200.0" text="Add first car">
+                        <Button fx:id="AddCar" layoutX="700.0" layoutY="185.0" onAction="#CombineCarDetails" prefHeight="31.0" prefWidth="200.0" text="Add car">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Button>
-                        <Button fx:id="AddDetails" layoutX="700.0" layoutY="1000.0" onAction="#CombineDetails" prefHeight="31.0" prefWidth="200.0" text="Toevoegen gegevens">
+                        <Button fx:id="AddDetails" layoutX="700.0" layoutY="600.0" onAction="#CombineDetails" prefHeight="31.0" prefWidth="200.0" text="Toevoegen gegevens">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Button>
-                        <Button fx:id="addProjectBtn" layoutX="700.0" layoutY="1190.0" onAction="#AddProjectToDropdown" prefHeight="31.0" prefWidth="200.0" text="add project">
+                        <Button fx:id="addProjectBtn" layoutX="700.0" layoutY="785.0" onAction="#AddProjectToDropdown" prefHeight="31.0" prefWidth="200.0" text="add project">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Button>
 
                         <VBox>
-
-                            <VBox>
-                                <Label fx:id="typeLabel"/>
-                                <Label fx:id="licenseLabel"/>
-                                <Label fx:id="companyLabel"/>
-                                <Label fx:id="projectLabel"/>
-                                <Label fx:id="rateLabel"/>
-                            </VBox>
-
-                            <Label/>
 
                             <VBox layoutX="11.0" layoutY="10.0">
 
