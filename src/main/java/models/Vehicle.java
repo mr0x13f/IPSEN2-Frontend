@@ -13,11 +13,15 @@ public class Vehicle implements VehicleObservable {
     private String licensePlate;
     private String type;
 
-    public void setType(String type) {this.type = type;}
-
-    public void setLicensePlate(String licensePlate) {
+    public Vehicle(String licensePlate, String type) {
         this.licensePlate = licensePlate;
+        this.type = type;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Vehicle [licensePlate=" + licensePlate +", type=" + type +"]";
+//    }
 
     @Override
     public void register(ManagementTabObserver mto) {
