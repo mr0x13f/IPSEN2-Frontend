@@ -1,23 +1,62 @@
 package main.java.models;
 
-public class Vehicle {
+import main.java.observables.VehicleObservable;
+import main.java.observers.ManagementTabObserver;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Vehicle implements VehicleObservable {
+
+    private List<ManagementTabObserver> observers = new ArrayList<>();
 
     private String licensePlate;
     private String type;
 
-    public String getLicensePlate() {
-        return licensePlate;
-    }
+    public void setType(String type) {this.type = type;}
 
     public void setLicensePlate(String licensePlate) {
         this.licensePlate = licensePlate;
     }
 
+    @Override
+    public void register(ManagementTabObserver mto) {
+        observers.add(mto);
+        notifyObservers();
+    }
+
+    @Override
+    public void notifyObservers() {
+        for(ManagementTabObserver mto : observers){
+            mto.update(this);
+        }
+    }
+
+    @Override
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    @Override
+    public String getLicensePlate() {
+        return licensePlate;
     }
+
+
+
+    public void yourLicensePlate(String licenseCar) {
+        licensePlate = licenseCar;
+        System.out.println("LicensePlate: "+ licensePlate);
+    }
+
+    public void yourCarName(String carName) {
+        type = carName;
+        System.out.println("Car type: "+ type);
+        notifyObservers();
+
+    }
+
+
+
 }
+

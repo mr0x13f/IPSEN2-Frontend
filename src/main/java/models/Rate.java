@@ -3,7 +3,8 @@ package main.java.models;
 public class Rate {
 
     private String name;
-    private double amount;
+    //Could be an double
+    private float amount;
 
     public String getName() {
         return name;
@@ -17,7 +18,12 @@ public class Rate {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(float amount) {
         this.amount = amount;
+    }
+
+    public void yourRate(float rate) {
+        amount = rate;
+        System.out.println("AMOUNT: "+amount);
     }
 }

@@ -20,4 +20,9 @@ public class Company {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void yourCompany(String company) {
+        name = company;
+        System.out.println("Company: "+name);
+    }
 }

@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="main.java.controllers.ManagementTabController"
-            prefHeight="400.0" prefWidth="600.0"
-            style="-fx-border-color: ababab; -fx-background-color: #efefef; -fx-border-width: 1px;">
+<AnchorPane mouseTransparent="false" prefHeight="829.0" prefWidth="686.0" style="-fx-border-color: ababab; -fx-background-color: #efefef; -fx-border-width: 1px;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.views.ManagementTabView">
     <children>
-        <VBox prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
-                <Label text="Distance in KM" style="-fx-font-size: 0.5em; -fx-padding: 4px;"/>
-                <TextField fx:id="textDistance" style="-fx-max-width: 700px; -fx-start-margin: 3px;"/>
-            </children>
-        </VBox>
+        <ScrollPane hbarPolicy="NEVER" prefHeight="829.0" prefWidth="1100.0">
+            <content>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+
+                    <children>
+
+                        <Button fx:id="DeleteCar" layoutX="700.0" layoutY="1040.0" prefHeight="31.0" prefWidth="200.0" text="Verwijder car">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="AddCar" layoutX="700.0" layoutY="185.0" onAction="#CombineCarDetails" prefHeight="31.0" prefWidth="200.0" text="Add car">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="AddDetails" layoutX="700.0" layoutY="600.0" onAction="#CombineDetails" prefHeight="31.0" prefWidth="200.0" text="Toevoegen gegevens">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="addProjectBtn" layoutX="700.0" layoutY="785.0" onAction="#AddProjectToDropdown" prefHeight="31.0" prefWidth="200.0" text="add project">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Button>
+
+                        <VBox>
+
+                            <VBox layoutX="11.0" layoutY="10.0">
+
+                                <children>
+
+                                    <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Name auto" />
+                                    <TextField fx:id="CarInput" maxWidth="586.0" prefHeight="31.0" prefWidth="-Infinity" promptText="type" style="-fx-max-width: 350px; -fx-start-margin: 3px;" />
+                                    <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="kenteken auto" />
+                                    <HBox>
+                                        <TextField fx:id="LicenseInput1" maxWidth="586.0" prefHeight="31.0" prefWidth="130.0" promptText="000" style="-fx-max-width: 350px; -fx-start-margin: 3px;" />
+                                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="32.0" style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="-" />
+                                        <TextField fx:id="LicenseInput2" maxWidth="586.0" prefHeight="31.0" prefWidth="130.0" promptText="000" style="-fx-max-width: 350px; -fx-start-margin: 3px;" />
+                                        <Label alignment="CENTER" prefHeight="31.0" prefWidth="32.0" style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="-" />
+                                        <TextField fx:id="LicenseInput3" maxWidth="586.0" prefHeight="31.0" prefWidth="130.0" promptText="000" style="-fx-max-width: 350px; -fx-start-margin: 3px;" />
+                                    </HBox>
+
+                                    <Label/>
+
+                                    <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Selecteer company" />
+                                    <ChoiceBox fx:id="CompanyBox" prefHeight="20.0" prefWidth="350.0">
+                                    </ChoiceBox>
+                                    <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Selecteer project" />
+                                    <ChoiceBox fx:id="ProjectBox" prefHeight="20.0" prefWidth="350.0">
+                                    </ChoiceBox>
+                                    <Label fx:id="Rate" style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Rate" />
+                                    <TextField fx:id="textRate" maxWidth="586.0" prefHeight="31.0" prefWidth="-Infinity" promptText="voer getal in" style="-fx-max-width: 350px; -fx-start-margin: 3px;" />
+
+                                    <Label />
+                                    <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="voeg nieuw project toe" />
+                                    <TextField fx:id="addProjectTextField" maxWidth="586.0" prefHeight="31.0" prefWidth="-Infinity" promptText="project naam" style="-fx-max-width: 350px; -fx-start-margin: 3px;" />
+                                </children>
+                            </VBox>
+
+                            <VBox layoutX="10" layoutY="1000">
+                                <Label />
+                                <Label />
+                                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Uw bezitte auto's" />
+                                <ChoiceBox fx:id="DeleteCarBox" prefHeight="20.0" prefWidth="350.0">
+                                </ChoiceBox>
+
+                                <Label>
+
+                                </Label>
+                            </VBox>
+                        </VBox>
+
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
     </children>
-
-
 </AnchorPane>
