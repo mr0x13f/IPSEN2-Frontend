@@ -4,18 +4,46 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 import models.Journey;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class CreateTabController {
+
+    private static HttpURLConnection apiConnection;
 
     @FXML private Tab createTab;
     private Journey newJourney;
 
     public void saveJourney(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, boolean isBilled){
+        connectToApi();
         if(checkAllValues(distance, rateId, projectId, parkingCost, otherCost)) {
             newJourney = new Journey(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled);
             System.out.println("Beschrijving: " + newJourney.getDescription());
         }
         else {
             System.out.println("Error gevonden!");
+        }
+    }
+
+    public void connectToApi() {
+        try {
+            URL apiUrl = new URL("https://jsonplaceholder.typicode.com/albums");
+            apiConnection = (HttpURLConnection) apiUrl.openConnection();
+
+            //request setup
+            apiConnection.setRequestMethod("GET");
+            apiConnection.setConnectTimeout(5000);
+            apiConnection.setReadTimeout(5000);
+
+            int status = apiConnection.getResponseCode();
+            System.out.println(status);
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
