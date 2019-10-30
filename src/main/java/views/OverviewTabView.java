@@ -1,4 +1,4 @@
-package main.java.views;
+package views;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,7 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import main.java.models.Journey;
+import models.Journey;
 
 import java.net.URL;
 import java.util.ResourceBundle;

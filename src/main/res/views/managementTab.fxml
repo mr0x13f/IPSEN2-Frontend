@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane mouseTransparent="false" prefHeight="829.0" prefWidth="686.0" style="-fx-border-color: ababab; -fx-background-color: #efefef; -fx-border-width: 1px;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.views.ManagementTabView">
+<AnchorPane mouseTransparent="false" prefHeight="829.0" prefWidth="686.0" style="-fx-border-color: ababab; -fx-background-color: #efefef; -fx-border-width: 1px;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.ManagementTabView">
     <children>
         <ScrollPane hbarPolicy="NEVER" prefHeight="829.0" prefWidth="1100.0">
             <content>

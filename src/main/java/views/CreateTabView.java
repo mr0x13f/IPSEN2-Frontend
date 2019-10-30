@@ -1,9 +1,9 @@
-package main.java.views;
+package views;
 
 import javafx.fxml.FXML;
 
 import javafx.scene.control.TextField;
-import main.java.controllers.CreateTabController;
+import controllers.CreateTabController;
 
 public class CreateTabView {
 

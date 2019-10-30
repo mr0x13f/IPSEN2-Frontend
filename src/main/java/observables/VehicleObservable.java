@@ -1,6 +1,6 @@
-package main.java.observables;
+package observables;
 
-import main.java.observers.ManagementTabObserver;
+import observers.ManagementTabObserver;
 
 public interface VehicleObservable {
 

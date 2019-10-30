@@ -1,8 +1,8 @@
-package main.java.controllers;
+package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
-import main.java.models.Journey;
+import models.Journey;
 
 public class CreateTabController {
 

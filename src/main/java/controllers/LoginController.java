@@ -1,4 +1,4 @@
-package main.java.controllers;
+package controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,8 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.models.Password;
-import main.java.Overig.PasswordHasher;
+import models.Password;
+import overig.PasswordHasher;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -31,7 +31,7 @@ public class LoginController {
 
     @FXML void autoLogin() throws IOException{
         Stage stage = (Stage) noAccountLabel.getScene().getWindow();
-        Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/views/masterView.fxml"));
+        Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
         stage.setScene(new Scene(overviewScene, 1200, 900));
     }
 

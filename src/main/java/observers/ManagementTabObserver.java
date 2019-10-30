@@ -1,7 +1,7 @@
-package main.java.observers;
+package observers;
 
-import main.java.models.Vehicle;
-import main.java.observables.VehicleObservable;
+import models.Vehicle;
+import observables.VehicleObservable;
 
 public interface ManagementTabObserver {
 

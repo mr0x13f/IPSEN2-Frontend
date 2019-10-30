@@ -1,5 +1,3 @@
-package main.java;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,13 +10,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../res/views/loginView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views/loginView.fxml"));
         primaryStage.setTitle("Kilometer Registratie");
         primaryStage.setScene(new Scene(root, 1200, 900));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
-
 
     public static void main(String[] args)throws IOException {
         launch(args);

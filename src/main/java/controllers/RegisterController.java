@@ -1,4 +1,4 @@
-package main.java.controllers;
+package controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +8,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import main.java.models.Password;
-import main.java.models.User;
-import main.java.Overig.PasswordHasher;
+import models.Password;
+import models.User;
+import overig.PasswordHasher;
 
 import java.io.IOException;
 

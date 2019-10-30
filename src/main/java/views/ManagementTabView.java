@@ -1,4 +1,4 @@
-package main.java.views;
+package views;
 
 import com.sun.javafx.scene.control.skin.ChoiceBoxSkin;
 import javafx.collections.FXCollections;
@@ -10,11 +10,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import main.java.controllers.ManagementTabController;
-import main.java.models.Project;
-import main.java.models.Vehicle;
-import main.java.observables.VehicleObservable;
-import main.java.observers.ManagementTabObserver;
+import controllers.ManagementTabController;
+import models.Project;
+import models.Vehicle;
 
 import java.net.URL;
 import java.util.ResourceBundle;

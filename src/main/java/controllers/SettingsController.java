@@ -1,4 +1,4 @@
-package main.java.controllers;
+package controllers;
 
 import javafx.animation.RotateTransition;
 import javafx.fxml.FXML;

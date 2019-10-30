@@ -1,8 +1,8 @@
-package main.java.views;
+package views;
 
 import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
-import main.java.controllers.LoginController;
+import controllers.LoginController;
 
 import java.io.IOException;
 

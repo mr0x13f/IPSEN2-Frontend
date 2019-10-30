@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.SettingsController">
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsController">
   <items>
     <AnchorPane fx:id="settingsBarPane" maxWidth="100.0" minHeight="0.0" minWidth="100.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #fb4c3c;;">
          <children>
@@ -29,7 +29,7 @@
          </children></AnchorPane>
     <AnchorPane fx:id="mainScreenPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <AnchorPane fx:id="settingsPane" layoutX="-8.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="1090.0">
+            <AnchorPane fx:id="settingsPane" layoutX="-8.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="1090.0" visible="false">
                <children>
                   <Label fx:id="logOutLabel" alignment="CENTER" layoutX="400.0" layoutY="700.0" onMouseClicked="#logOut" prefHeight="27.0" prefWidth="290.0" style="-fx-background-color: #fb4c3c; -fx-border-width: 2; -fx-border-color: black;" text="Log out" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0">
                      <font>
@@ -41,7 +41,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <TabPane fx:id="tabPane" prefHeight="100.0" prefWidth="100.0" style="-fx-font-size: 3.0em; -fx-tab-min-width: 340px; -fx-tab-min-height: 60px; -fx-tab-max-height: 60px; -fx-tab-max-width: 500px;" tabClosingPolicy="UNAVAILABLE" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TabPane fx:id="tabPane" prefHeight="100.0" prefWidth="100.0" style="-fx-font-size: 3.0em; -fx-tab-min-width: 340px; -fx-tab-min-height: 60px; -fx-tab-max-height: 60px; -fx-tab-max-width: 500px;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <tabs>
                   <Tab fx:id="createTab" style="-fx-background-color: #efefef; -fx-border-color: #ababab; -fx-border-width: 1px;" text="Invoeren">
                       <fx:include fx:id="createInclude" source="createTab.fxml" />

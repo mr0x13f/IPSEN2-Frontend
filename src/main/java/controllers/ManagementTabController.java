@@ -1,14 +1,13 @@
-package main.java.controllers;
+package controllers;
 
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
-import main.java.models.Company;
-import main.java.models.Project;
-import main.java.models.Rate;
-import main.java.models.Rate;
-import main.java.models.Vehicle;
-import main.java.observers.ManagementTabObserver;
+import models.Company;
+import models.Project;
+import models.Rate;
+import models.Vehicle;
+import observers.ManagementTabObserver;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -42,17 +41,10 @@ public class ManagementTabController {
         }
     }
 
-    public void CombineDetails(String Company, String Project, float Rate) {
+    public void combineDetails(String Company, String Project, float Rate) {
         ComModel.yourCompany(Company);
         ProModel.yourProject(Project);
         RateModel.yourRate(Rate);
-    }
-
-
-    //mag waarschijnlijk verwijderd worden
-    public void CombineCarDetails(String carName, String licenseCar) {
-        CarModel.yourLicensePlate(licenseCar);
-        CarModel.yourCarName(carName);
     }
 
 //    OBSERVER PATERN

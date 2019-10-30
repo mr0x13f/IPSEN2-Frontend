@@ -1,7 +1,7 @@
-package main.java.models;
+package models;
 
-import main.java.observables.VehicleObservable;
-import main.java.observers.ManagementTabObserver;
+import observables.VehicleObservable;
+import observers.ManagementTabObserver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +26,6 @@ public class Vehicle {
 //        return "Vehicle [licensePlate=" + licensePlate +", type=" + type +"]";
 //    }
 
-    @Override
-    public void register(ManagementTabObserver mto) {
-        observers.add(mto);
-        notifyObservers();
-    }
 
     }
 
@@ -58,22 +53,4 @@ public class Vehicle {
 //    public String getLicensePlate() {
 //        return licensePlate;
 //    }
-
-
-
-    public void yourLicensePlate(String licenseCar) {
-        licensePlate = licenseCar;
-        System.out.println("LicensePlate: "+ licensePlate);
-    }
-
-    public void yourCarName(String carName) {
-        type = carName;
-        System.out.println("Car type: "+ type);
-//        notifyObservers();
-
-    }
-
-
-
-}
 
