@@ -9,9 +9,9 @@ public class CreateTabController {
     @FXML private Tab createTab;
     private Journey newJourney;
 
-    public void saveJourney(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost){
+    public void saveJourney(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, boolean isBilled){
         if(checkAllValues(distance, rateId, projectId, parkingCost, otherCost)) {
-            newJourney = new Journey(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost);
+            newJourney = new Journey(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled);
             System.out.println("Beschrijving: " + newJourney.getDescription());
         }
         else {
@@ -49,6 +49,4 @@ public class CreateTabController {
         }
         return accepted;
     }
-
-
 }

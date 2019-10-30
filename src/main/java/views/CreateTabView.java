@@ -29,6 +29,7 @@ public class CreateTabView {
         String description = textDescription.getText();
         double parkingCost = 0.0;
         double otherCost = 0.0;
+        boolean isBilled = false;
 
         try {
             distance = Integer.parseInt(textDistance.getText());
@@ -36,7 +37,7 @@ public class CreateTabView {
             projectId = Integer.parseInt(textProjectId.getText());
             parkingCost = Double.parseDouble(textParkingCost.getText());
             otherCost = Double.parseDouble(textOtherCost.getText());
-            createTabController.saveJourney(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost);
+            createTabController.saveJourney(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled);
         }
         catch (NumberFormatException e) {
             System.out.println("Not a number");

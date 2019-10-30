@@ -20,4 +20,9 @@ public class Project {
     public void setName(String name) {
         this.name = name;
     }
+
+    public void yourProject(String project) {
+        name = project;
+        System.out.println("Project: "+ name);
+    }
 }

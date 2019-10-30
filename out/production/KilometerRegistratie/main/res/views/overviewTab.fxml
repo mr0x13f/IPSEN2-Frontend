@@ -1,10 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: ababab; -fx-background-color: #efefef; -fx-border-width: 1px;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.controllers.OverviewTabController">
+<AnchorPane prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.views.OverviewTabView">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="686.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="100.0" prefWidth="200.0" />
+      <AnchorPane prefHeight="300.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="overviewTable" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" style="-fx-font-size: 1.1em">
+              <columns>
+                 <TableColumn fx:id="projectColumn" minWidth="140.0" text="Project" />
+                 <TableColumn fx:id="distanceColumn" minWidth="100.0" text="Kilometers" />
+                 <TableColumn fx:id="dateColumn" minWidth="120.0" text="Datum" />
+                 <TableColumn fx:id="destinationColumn" minWidth="140.0" text="Bestemming" />
+                 <TableColumn fx:id="rateColumn" minWidth="100.0" text="Vergoeding" />
+                  <TableColumn fx:id="isBilledColumn" minWidth="70.0" text="Status" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
 
+   </children>
+</VBox>
 </AnchorPane>
