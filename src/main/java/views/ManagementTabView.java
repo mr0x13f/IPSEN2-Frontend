@@ -89,43 +89,41 @@ public class ManagementTabView implements Initializable {
     }
 
     @FXML
-    public void CombineDetails() {
+    public void combineDetails() {
         String Company = CompanyBox.getValue();
-
         String Project = ProjectBox.getValue();
-
         try {
             float Rate = Float.valueOf(textRate.getText());
 
-            ManTCon.CombineDetails(Company, Project, Rate);
+            ManTCon.combineDetails(Company, Project, Rate);
         } catch (Exception e) {
             System.out.println("Het moet een getal zijn");
         }
-
     }
 
-    public void CombineCarDetails() {
+    public void combineCarDetails() {
         String carName = CarInput.getText();
 
         String licenseCar = LicenseInput1.getText() + "-" + LicenseInput2.getText() + "-" + LicenseInput3.getText();
 
-        ManTCon.CombineCarDetails(carName, licenseCar);
+
+//        OBSERVER PATERN
+//        ManTCon.combineCarDetails(carName, licenseCar);
+
+        ManTCon.addToCarToGson(carName, licenseCar);
 
         //Adding the cars to the delete dropdown. so you can delete the car afterwards if you want to
-        AddCarToDeleteCars();
+        addCarToDeleteCars();
 
     }
 
-
-    public void AddProjectToDropdown() {
-
+    public void addProjectToDropdown() {
         String projectName = addProjectTextField.getText();
         ProjectList.add(projectName);
         addProjectTextField.setText("");
     }
 
-
-    public void AddCarToDeleteCars() {
+    public void addCarToDeleteCars() {
         String carName = CarInput.getText();
 
         DeleteCarList.add(carName);
