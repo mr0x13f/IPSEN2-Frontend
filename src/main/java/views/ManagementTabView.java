@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 
 public class ManagementTabView implements Initializable {
 
-    ManagementTabController ManTCon = new ManagementTabController();
+    ManagementTabController managementTabController = new ManagementTabController();
 
     @FXML
     ObservableList<String> CompanyList = FXCollections
@@ -74,8 +74,6 @@ public class ManagementTabView implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        //
-
         //Toevoegen gegevens
         CompanyBox.setValue("no company");
         CompanyBox.setItems(CompanyList);
@@ -97,7 +95,7 @@ public class ManagementTabView implements Initializable {
         try {
             float Rate = Float.valueOf(textRate.getText());
 
-            ManTCon.CombineDetails(Company, Project, Rate);
+            managementTabController.CombineDetails(Company, Project, Rate);
         } catch (Exception e) {
             System.out.println("Het moet een getal zijn");
         }
@@ -109,7 +107,11 @@ public class ManagementTabView implements Initializable {
 
         String licenseCar = LicenseInput1.getText() + "-" + LicenseInput2.getText() + "-" + LicenseInput3.getText();
 
-        ManTCon.CombineCarDetails(carName, licenseCar);
+        //ManTCon.CombineCarDetails(carName, licenseCar);
+
+        Vehicle vehicle = new Vehicle(licenseCar, carName);
+
+        managementTabController.createVehicle(vehicle);
 
         //Adding the cars to the delete dropdown. so you can delete the car afterwards if you want to
         AddCarToDeleteCars();

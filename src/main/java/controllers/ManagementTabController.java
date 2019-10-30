@@ -27,12 +27,12 @@ public class ManagementTabController {
     //Dummy data
     Vehicle vehicle = new Vehicle("68-kfj-3", "Jaguar E-type");
 
-    private void createVehicle(Vehicle v) {
+    public void createVehicle(Vehicle v) {
 
         try {
             String jasonString = gson.toJson(v);
 
-            FileWriter writer = new FileWriter("/../../data/savedVehicles.json");
+            FileWriter writer = new FileWriter("%appdata%/kilometerregistratie/savedVehicles.json");
             writer.write(jasonString);
             writer.close();
         }
@@ -48,7 +48,7 @@ public class ManagementTabController {
     }
 
 
-    //mag waarschijnlijk verwijdert worden
+    //mag waarschijnlijk verwijderd worden
     public void CombineCarDetails(String carName, String licenseCar) {
         CarModel.yourLicensePlate(licenseCar);
         CarModel.yourCarName(carName);
