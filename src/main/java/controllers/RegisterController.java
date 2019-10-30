@@ -8,15 +8,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import main.java.models.Password;
 import main.java.models.User;
+import main.java.Overig.PasswordHasher;
 
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 import java.io.IOException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.KeySpec;
 
 
 public class RegisterController {
@@ -36,20 +32,26 @@ public class RegisterController {
 
         String email = emailTextfieldRegister.getText();
         String fullName = fullNameTextfieldRegister.getText();
-        String password = passwordTextfieldRegister.getText();
+        String userPassword = passwordTextfieldRegister.getText();
         String confirmPassword = confirmPasswordTextfieldRegsiter.getText();
 
 
-        if(confirmPassword(password,confirmPassword)&&isEmailValid(email)){
+        if(confirmPassword(userPassword,confirmPassword)&&isEmailValid(email)){
             try{
-                byte[] hash = hashPassword(password);
-                 String hashedPassword = hash.toString();
-                User user = new User(0, email, fullName, hashedPassword);
+                PasswordHasher passwordHasher = new PasswordHasher();
+                Password password  = passwordHasher.hashPassword(userPassword);
 
+                String hashedPassword = password.getHash().toString();
+                String salt = password.getSalt().toString();
+
+
+                User user = new User(0, email, fullName, hashedPassword, salt);
+
+                System.out.println(user.getUserId());
                 System.out.println(user.getEmail());
                 System.out.println(user.getName());
-                System.out.println(user.getPassword());
-                System.out.println(user.getUserId());
+                System.out.println(user.getPassword().toCharArray());
+                System.out.println(user.getSalt());
 
             }catch(Exception e){
             }
@@ -73,18 +75,7 @@ public class RegisterController {
         }
     }
 
-    private byte[] hashPassword(String password) throws NoSuchAlgorithmException, InvalidKeySpecException{
-        SecureRandom random = new SecureRandom();
-        byte[] salt = new byte[16];
-        random.nextBytes(salt);
 
-        KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 91052, 128);
-        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-
-        byte[] hash = factory.generateSecret(spec).getEncoded();
-
-        return hash;
-    }
 
     private boolean isEmailValid(String email){
         if(email.contains("@")){

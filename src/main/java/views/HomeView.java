@@ -10,4 +10,8 @@ public class HomeView {
 
     }
 
+    private void optionsButtonAnimation(){
+
+    }
+
 }

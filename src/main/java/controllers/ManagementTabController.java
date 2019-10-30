@@ -8,11 +8,12 @@ import main.java.models.Project;
 import main.java.models.Rate;
 import main.java.models.Rate;
 import main.java.models.Vehicle;
-import main.java.models.Vehicle;
 import main.java.observers.ManagementTabObserver;
 
 import java.io.FileWriter;
 import java.io.IOException;
+
+import java.io.Writer;
 
 public class ManagementTabController {
     Company ComModel = new Company();
@@ -54,9 +55,15 @@ public class ManagementTabController {
         CarModel.yourCarName(carName);
     }
 
-    public void register(ManagementTabObserver mto) {
-        CarModel.register(mto);
-    }
+//    OBSERVER PATERN
+//    public void combineCarDetails(String carName, String licenseCar) {
+//        CarModel.yourLicensePlate(licenseCar);
+//        CarModel.yourCarName(carName);
+//    }
+//
+//    public void register(ManagementTabObserver mto) {
+//        CarModel.register(mto);
+//    }
 
 
 }
