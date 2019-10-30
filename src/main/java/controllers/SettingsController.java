@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -25,7 +26,7 @@ public class SettingsController {
     @FXML private ImageView settingsImageView;
     @FXML private AnchorPane settingsPane;
     @FXML private TabPane tabPane;
-    @FXML private Label noAccountLabel;
+    @FXML private Label logOutLabel;
 
 
     private boolean inOptions = false;
@@ -76,4 +77,5 @@ public class SettingsController {
         }catch (Exception e){}
 
     }
+
 }
