@@ -3,16 +3,14 @@ package controllers;
 import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
+import jdk.nashorn.internal.parser.JSONParser;
 import models.Company;
 import models.Project;
 import models.Rate;
 import models.Vehicle;
 import observers.ManagementTabObserver;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
-import java.io.Writer;
+import java.io.*;
 
 public class ManagementTabController {
     Company ComModel = new Company();
@@ -37,6 +35,16 @@ public class ManagementTabController {
             writer.close();
         }
         catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void readVehicleFile() {
+        try {
+            Vehicle newVehicle = gson.fromJson(new FileReader("savedVehicles.json"), Vehicle.class);
+            System.out.println("Naam van voertuig: " + newVehicle.getType() + "\n" + "Kenteken van voertuig: " + newVehicle.getLicensePlate());
+        }
+        catch(FileNotFoundException e) {
             e.printStackTrace();
         }
     }

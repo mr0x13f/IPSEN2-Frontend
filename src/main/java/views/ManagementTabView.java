@@ -103,6 +103,7 @@ public class ManagementTabView implements Initializable {
         Vehicle vehicle = new Vehicle(licenseCar, carName);
 
         managementTabController.createVehicle(vehicle);
+        managementTabController.readVehicleFile();
 
         //Adding the cars to the delete dropdown. so you can delete the car afterwards if you want to
         //addCarToDeleteCars();
