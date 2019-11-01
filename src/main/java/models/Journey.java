@@ -1,9 +1,13 @@
 package models;
 
+import observables.Observable;
+import observers.Observer;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-public class Journey {
+public class Journey{
 
     private int journeyId;
     private int distance;
@@ -15,12 +19,12 @@ public class Journey {
     private double parkingCost;
     private double otherCost;
     private int creatorId;
-    private List observers;
     private boolean isBilled; //Nog toevoegen in de rest van de code
+    private String datetime;
 
 
 
-    public Journey(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, Boolean isBilled) {
+    public Journey(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, Boolean isBilled, String datetime) {
         this.distance = distance;
         this.vehicleLicensePlate = licensePlate;
         this.destination = destination;
@@ -30,95 +34,63 @@ public class Journey {
         this.parkingCost = parkingCost;
         this.otherCost = otherCost;
         this.isBilled = isBilled;
+        this.datetime = datetime;
 
         //observer pattern
-        //this.observers = new ArrayList<ViewInterface>();
+        //this.observers = new ArrayList<Observer>();
     }
+
+    //DEZE GETTERS NIET VERWIJDEREN!!!
 
     public int getJourneyId() {
         return journeyId;
     }
 
-    public void setJourneyId(int journeyId) {
-        this.journeyId = journeyId;
-    }
-
-    public int getKilometers() {
+    public int getDistance() {
         return distance;
-    }
-
-    public void setKilometers(int kilometers) {
-        this.distance = kilometers;
     }
 
     public String getVehicleLicensePlate() {
         return vehicleLicensePlate;
     }
 
-    public void setVehicleLicensePlate(String vehicleLicensePlate) {
-        this.vehicleLicensePlate = vehicleLicensePlate;
-    }
-
     public String getDestination() {
         return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
     }
 
     public int getRateId() {
         return rateId;
     }
 
-    public void setRateId(int rateId) {
-        this.rateId = rateId;
-    }
-
     public int getProjectId() {
         return projectId;
-    }
-
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public double getParkingCost() {
         return parkingCost;
-    }
-
-    public void setParkingCost(double parkingCost) {
-        this.parkingCost = parkingCost;
     }
 
     public double getOtherCost() {
         return otherCost;
     }
 
-    public void setOtherCost(double otherCost) {
-        this.otherCost = otherCost;
-    }
-
     public int getCreatorId() {
         return creatorId;
     }
 
-    public void setCreatorId(int creatorId) {
-        this.creatorId = creatorId;
+    public String getIsBilled() {
+        if(isBilled){
+            return "true";
+        }else{
+            return "false";
+        }
     }
 
-//    private void notifyObservers(){
-//        for (int i = 0; i< observers.size(); i++){
-//            observers.get(i).update(this);
-//        }
-//    }
-
+    public String getDatetime() {
+        return datetime;
+    }
 }

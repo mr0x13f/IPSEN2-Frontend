@@ -39,7 +39,7 @@ public class CreateTabController {
     public void saveJourney(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, boolean isBilled){
         connectToApi(); //To test if API works
         if(checkAllValues(distance, rateId, projectId, parkingCost, otherCost)) {
-            newJourney = new Journey(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled);
+            newJourney = new Journey(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled, date);
             System.out.println("Beschrijving: " + newJourney.getDescription());
         }
         else {
