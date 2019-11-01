@@ -1,54 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/JourneyList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/observables/Observable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/observers/Observer.java" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Werkende observers en tabel shit meuk verbeterd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/controllers/JourneyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/controllers/JourneyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/controllers/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/controllers/SettingsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/Overig/PasswordHasher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/CompanyController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/CreateTabController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/JourneyController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/ManagementTabController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/OverviewTabController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/ProjectController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/RateController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/RegisterController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/SettingsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/controllers/VehicleController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/models/Company.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/models/Journey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/models/Password.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/models/Project.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/models/Rate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/models/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/models/Vehicle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/observables/VehicleObservable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/observers/ManagementTabObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/views/CreateTabView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/views/HomeView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/views/LoginView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/views/ManagementTabView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/views/OptionsView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/views/OverviewTabView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/main/java/views/SettingsView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/models/Journey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/models/Journey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/OverviewTabView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/OverviewTabView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/overviewTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/overviewTab.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/CreateTabController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/CreateTabController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/JourneyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/JourneyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Journey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Journey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/CreateTabView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/CreateTabView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/OverviewTabView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/OverviewTabView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/views/overviewTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/views/overviewTab.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/controllers/CreateTabController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/controllers/CreateTabController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/CreateTabView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/CreateTabView.class" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -118,7 +74,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/views/OverviewTabView.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="241">
@@ -143,7 +99,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/JourneyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
+            <state relative-caret-position="374">
               <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -154,11 +110,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/models/Journey.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="451">
+              <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1260#1261#0" expanded="true" />
@@ -181,7 +137,7 @@
                 <element signature="e#1851#1852#0" expanded="true" />
                 <element signature="e#1884#1885#0" expanded="true" />
                 <element signature="e#1916#1917#0" expanded="true" />
-                <element signature="e#2122#2123#0" expanded="true" />
+                <element signature="e#2165#2166#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -430,7 +386,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572608434112" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572608511171" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../IIPSEN" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -547,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570627678518</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Werkende observers en tabel shit meuk verbeterd">
+      <created>1572608494718</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572608494718</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -555,7 +518,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -595,7 +557,7 @@
       <window_info anchor="right" id="Preview" order="11" weight="0.071428575" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18976545" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19509594" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -615,7 +577,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.3261105" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32583067" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
@@ -640,7 +602,8 @@
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="controllerklasse geadd martijn" />
-    <option name="LAST_COMMIT_MESSAGE" value="controllerklasse geadd martijn" />
+    <MESSAGE value="Werkende observers en tabel shit meuk verbeterd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Werkende observers en tabel shit meuk verbeterd" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -957,40 +920,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/views/masterView.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/observers/Observer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/views/OverviewTabView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="39" column="94" selection-start-line="39" selection-start-column="86" selection-end-line="39" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/JourneyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1011,8 +944,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/models/Journey.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="451">
+          <caret line="54" column="5" lean-forward="true" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1260#1261#0" expanded="true" />
@@ -1035,7 +968,37 @@
             <element signature="e#1851#1852#0" expanded="true" />
             <element signature="e#1884#1885#0" expanded="true" />
             <element signature="e#1916#1917#0" expanded="true" />
-            <element signature="e#2122#2123#0" expanded="true" />
+            <element signature="e#2165#2166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/JourneyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="40" lean-forward="true" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#464#465#0" expanded="true" />
+            <element signature="e#511#512#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/views/masterView.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/views/OverviewTabView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="39" column="94" selection-start-line="39" selection-start-column="86" selection-end-line="39" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
