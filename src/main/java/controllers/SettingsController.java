@@ -72,9 +72,11 @@ public class SettingsController {
         //todo loguit
         try {
             Stage stage = (Stage) settingsPane.getScene().getWindow();
-            Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/views/loginView.fxml"));
-            stage.setScene(new Scene(overviewScene, 1200, 900));
-        }catch (Exception e){}
+            Parent loginScene = FXMLLoader.load(getClass().getResource("../../res/views/loginView.fxml"));
+            stage.setScene(new Scene(loginScene, 1200, 900));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 
