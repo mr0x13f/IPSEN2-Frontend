@@ -30,10 +30,10 @@ public class ManagementTabController {
     public void createVehicle(Vehicle v) {
 
         try {
-            String jasonString = gson.toJson(v);
+            String jsonString = gson.toJson(v);
 
             FileWriter writer = new FileWriter("savedVehicles.json");
-            writer.write(jasonString);
+            writer.append(jsonString); //Can also be: writer.write(jsonString)
             writer.close();
         }
         catch (IOException e){

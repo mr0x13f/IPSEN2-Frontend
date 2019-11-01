@@ -98,17 +98,14 @@ public class ManagementTabView implements Initializable {
 
     public void combineCarDetails() {
         String carName = CarInput.getText();
-
         String licenseCar = LicenseInput1.getText() + "-" + LicenseInput2.getText() + "-" + LicenseInput3.getText();
-
-        //ManTCon.CombineCarDetails(carName, licenseCar);
 
         Vehicle vehicle = new Vehicle(licenseCar, carName);
 
         managementTabController.createVehicle(vehicle);
 
         //Adding the cars to the delete dropdown. so you can delete the car afterwards if you want to
-        addCarToDeleteCars();
+        //addCarToDeleteCars();
 
     }
 
