@@ -5,6 +5,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import controllers.CreateTabController;
 
+/**
+ * View for the create tab.
+ * @version 17-10-2019
+ */
 public class CreateTabView {
 
     @FXML TextField textDistance;
@@ -18,6 +22,10 @@ public class CreateTabView {
 
     CreateTabController createTabController = new CreateTabController();
 
+    /**
+     * Parses the input from textfields to their respective data formats and calls the 'saveJourney' method in the controller.
+     * @author Stan
+     */
     @FXML
     private void saveJourney(){
 
@@ -43,12 +51,4 @@ public class CreateTabView {
             System.out.println("Not a number");
         }
     }
-
-    //waar is dit voor?
-    private void OverviewTabView(){
-
-    }
-
-
-
 }

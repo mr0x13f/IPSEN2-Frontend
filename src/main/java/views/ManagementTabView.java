@@ -32,7 +32,6 @@ public class ManagementTabView implements Initializable {
             .observableArrayList();
 
 
-
     @FXML
     Button AddCar;
     @FXML
