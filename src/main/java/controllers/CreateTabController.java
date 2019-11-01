@@ -35,8 +35,9 @@ public class CreateTabController {
      * @param parkingCost
      * @param otherCost
      * @param isBilled
+     * @param date
      */
-    public void saveJourney(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, boolean isBilled){
+    public void saveJourney(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, boolean isBilled, String date){
         connectToApi(); //To test if API works
         if(checkAllValues(distance, rateId, projectId, parkingCost, otherCost)) {
             newJourney = new Journey(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled, date);
