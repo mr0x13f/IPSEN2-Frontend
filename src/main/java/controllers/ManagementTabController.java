@@ -32,7 +32,7 @@ public class ManagementTabController {
         try {
             String jasonString = gson.toJson(v);
 
-            FileWriter writer = new FileWriter("%appdata%/kilometerregistratie/savedVehicles.json");
+            FileWriter writer = new FileWriter("savedVehicles.json");
             writer.write(jasonString);
             writer.close();
         }
