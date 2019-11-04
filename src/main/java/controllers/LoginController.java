@@ -11,11 +11,19 @@ import javafx.stage.Stage;
 import models.Password;
 import overig.PasswordHasher;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
+import java.util.Base64;
 
 public class LoginController {
+
+    private static HttpURLConnection apiConnection;
 
     public void Authencate(){}
 
@@ -33,6 +41,59 @@ public class LoginController {
         Stage stage = (Stage) noAccountLabel.getScene().getWindow();
         Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
         stage.setScene(new Scene(overviewScene, 1200, 900));
+    }
+
+    public void connectToApi() {
+
+        BufferedReader reader;
+        String line;
+        StringBuffer responseContent = new StringBuffer();
+
+        try {
+            URL apiUrl = new URL("http://localhost:8080/users/authenticate");
+            apiConnection = (HttpURLConnection) apiUrl.openConnection();
+
+            //request setup
+            apiConnection.setRequestMethod("GET");
+            apiConnection.setConnectTimeout(5000); //tIMEOUTS
+            apiConnection.setReadTimeout(5000);
+
+            int status = apiConnection.getResponseCode();
+            System.out.println(status);
+
+            //no connection
+            if (status > 299) {
+
+                reader = new BufferedReader(new InputStreamReader(apiConnection.getErrorStream()));
+                while((line = reader.readLine()) != null ) {
+                    responseContent.append(line);
+                }
+                reader.close();
+            }
+            //connection successfull
+            else {
+                String userCredentials = "nigerfagoot@gmail.com:wachtwoord"; //username:password
+                String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+
+                apiConnection.setRequestProperty ("Authorization", basicAuth);
+
+                reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
+                while((line = reader.readLine()) != null ) {
+                    responseContent.append(line);
+                }
+                reader.close();
+            }
+            System.out.println(responseContent.toString());
+        }
+        catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //closes the connection
+        finally {
+            apiConnection.disconnect();
+        }
     }
 
     @FXML void login() throws InvalidKeySpecException, NoSuchAlgorithmException {

@@ -50,6 +50,9 @@ public class CreateTabView {
         }
         catch (NumberFormatException e) {
             System.out.println("Not a number");
+
+            //remove when done testing
+            createTabController.testAPI();
         }
     }
 }

@@ -38,7 +38,6 @@ public class CreateTabController {
      * @param date
      */
     public void saveJourney(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, boolean isBilled, String date){
-        connectToApi(); //To test if API works
         if(checkAllValues(distance, rateId, projectId, parkingCost, otherCost)) {
             newJourney = new Journey(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled, date);
             System.out.println("Beschrijving: " + newJourney.getDescription());
@@ -46,6 +45,10 @@ public class CreateTabController {
         else {
             System.out.println("Error gevonden!");
         }
+    }
+
+    public void testAPI() {
+        connectToApi(); //To test if API works
     }
 
     /**
@@ -60,7 +63,7 @@ public class CreateTabController {
         StringBuffer responseContent = new StringBuffer();
 
         try {
-            URL apiUrl = new URL("https://jsonplaceholder.typicode.com/albums");
+            URL apiUrl = new URL("http://localhost:8080/journey/");
             apiConnection = (HttpURLConnection) apiUrl.openConnection();
 
             //request setup
@@ -72,21 +75,21 @@ public class CreateTabController {
             System.out.println(status);
 
             //no connection
-            if (status > 299) {
-                reader = new BufferedReader(new InputStreamReader(apiConnection.getErrorStream()));
-                while((line = reader.readLine()) != null ) {
-                    responseContent.append(line);
-                }
-                reader.close();
-            }
-            //connection successfull
-            else {
-                reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
-                while((line = reader.readLine()) != null ) {
-                    responseContent.append(line);
-                }
-                reader.close();
-            }
+//            if (status > 299) {
+//                reader = new BufferedReader(new InputStreamReader(apiConnection.getErrorStream()));
+//                while((line = reader.readLine()) != null ) {
+//                    responseContent.append(line);
+//                }
+//                reader.close();
+//            }
+//            //connection successfull
+//            else {
+//                reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
+//                while((line = reader.readLine()) != null ) {
+//                    responseContent.append(line);
+//                }
+//                reader.close();
+//            }
             System.out.println(responseContent.toString());
         }
         catch (MalformedURLException e) {
