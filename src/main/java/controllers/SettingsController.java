@@ -43,7 +43,6 @@ public class SettingsController {
 
     @FXML
     private void settingsButtonClick(){
-        loadSettingsTab();
         if(inOptions){
             //ga uit de options
             inOptions = false;
@@ -59,20 +58,13 @@ public class SettingsController {
         }
     }
 
-    @FXML private void loadSettingsTab(){
-        try {
-            AnchorPane newLoadedPane = FXMLLoader.load(getClass().getResource("../../res/views/optionsView"));
-            settingsPane.getChildren().add(newLoadedPane);
-        }catch (Exception e){}
-    }
-
     @FXML
     private void logOut(){
         System.out.println("Logout");
         //todo loguit
         try {
             Stage stage = (Stage) settingsPane.getScene().getWindow();
-            Parent loginScene = FXMLLoader.load(getClass().getResource("../../res/views/loginView.fxml"));
+            Parent loginScene = FXMLLoader.load(getClass().getResource("/views/loginView.fxml"));
             stage.setScene(new Scene(loginScene, 1200, 900));
         }catch (Exception e){
             e.printStackTrace();

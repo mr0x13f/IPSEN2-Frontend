@@ -13,6 +13,9 @@ import models.User;
 import overig.PasswordHasher;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class RegisterController {
@@ -47,6 +50,7 @@ public class RegisterController {
 
                 User user = new User(0, email, fullName, hashedPassword, salt);
 
+
                 System.out.println(user.getUserId());
                 System.out.println(user.getEmail());
                 System.out.println(user.getName());
@@ -54,17 +58,28 @@ public class RegisterController {
                 System.out.println(user.getSalt());
 
             }catch(Exception e){
+                e.printStackTrace();
             }
-
-
-
-            System.out.println("User Created!");
         }
-
-
-
-
+        sendUserToApi();
+        goToLoginView();
     }
+
+    private void sendUserToApi() {
+        String url = "http://localhost:8080/user/register";
+        try {
+            URL urlObj = new URL(url);
+            HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
+            connection.setRequestMethod("POST");
+            //connection.setRequestProperty("Con");
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public boolean confirmPassword(String password, String confirmPassword){
         if(password.equals(confirmPassword)&& password.length()>5){
@@ -86,9 +101,14 @@ public class RegisterController {
     }
 
     @FXML
-    private void goToLoginView() throws IOException {
-        Stage stage = (Stage) alreadyHaveAccount.getScene().getWindow();
-        Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/views/loginView.fxml"));
-        stage.setScene(new Scene(overviewScene, 1200, 900));
+    private void goToLoginView(){
+        try{
+            Stage stage = (Stage) alreadyHaveAccount.getScene().getWindow();
+            Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/views/loginView.fxml"));
+            stage.setScene(new Scene(overviewScene, 1200, 900));
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
     }
 }

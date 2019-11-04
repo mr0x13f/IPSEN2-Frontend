@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Werkende observers en tabel shit meuk verbeterd">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="help me">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/models/Journey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/models/Journey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/OverviewTabView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/OverviewTabView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/overviewTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/views/overviewTab.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Journey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Journey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/views/OverviewTabView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/views/OverviewTabView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/views/optionsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/views/optionsView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/views/overviewTab.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/views/overviewTab.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/KilometerRegistratie/controllers/SettingsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/KilometerRegistratie/controllers/SettingsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/SettingsController.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,11 +66,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/RegisterController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="383">
+              <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,14 +78,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SettingsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="73" column="70" lean-forward="true" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+            <state relative-caret-position="62">
+              <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controllers/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -193,7 +198,6 @@
         <option value="$PROJECT_DIR$/src/main/java/overig/PasswordHasher.java" />
         <option value="$PROJECT_DIR$/src/main/java/observers/ManagementTabObserver.java" />
         <option value="$PROJECT_DIR$/src/main/java/observables/VehicleObservable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controllers/RegisterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/models/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/main/res/views/loginView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
@@ -214,6 +218,7 @@
         <option value="$PROJECT_DIR$/src/main/java/views/OverviewTabView.java" />
         <option value="$PROJECT_DIR$/src/main/res/views/optionsView.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/controllers/SettingsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/controllers/RegisterController.java" />
       </list>
     </option>
   </component>
@@ -224,11 +229,10 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1066" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -265,13 +269,6 @@
               <item name="Groep10_IPSEN2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Groep10_IPSEN2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Groep10_IPSEN2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -279,15 +276,8 @@
               <item name="Groep10_IPSEN2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Groep10_IPSEN2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Groep10_IPSEN2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -311,7 +301,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572870577274" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572875800273" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Groep10_IPSEN2_API" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -435,17 +425,24 @@
       <option name="project" value="LOCAL" />
       <updated>1572608494718</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="help me">
+      <created>1572870637127</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572870637127</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="81767000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19936034" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.4091904" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -454,7 +451,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.6045016" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6045016" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.562701" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -465,7 +462,7 @@
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.32583067" />
+      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32900432" />
       <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="bottom" id="Database Changes" order="15" />
       <window_info anchor="bottom" id="Docker" order="16" show_stripe_button="false" />
@@ -529,7 +526,8 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="controllerklasse geadd martijn" />
     <MESSAGE value="Werkende observers en tabel shit meuk verbeterd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Werkende observers en tabel shit meuk verbeterd" />
+    <MESSAGE value="help me" />
+    <option name="LAST_COMMIT_MESSAGE" value="help me" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -709,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/ManagementTabController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
@@ -888,16 +879,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/RegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/views/optionsView.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -924,8 +905,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/controllers/SettingsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="73" column="70" lean-forward="true" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+        <state relative-caret-position="62">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/RegisterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="73" column="46" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
