@@ -14,6 +14,9 @@ import observables.Observable;
 import observers.Observer;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.Random;
 import java.util.ResourceBundle;
 
@@ -39,16 +42,22 @@ public class OverviewTabView implements Initializable, Observer {
         rateColumn.setCellValueFactory(new PropertyValueFactory<Journey, String>("rateId"));
         isBilledColumn.setCellValueFactory(new PropertyValueFactory<Journey, String>("isBilled"));
 
+ 
         journeyController = JourneyController.getInstance();
         journeyController.journeyList.attachObserver(this);
     }
 
     public void addData(){
-        journeyController.addJourneyToList(new Journey(10,"420-69","van de kaart", 4,3,"help me",9,3,true, "13:37"));
+        System.out.println((new Random().nextInt(999999)));
+        String timestamp = new SimpleDateFormat("yyyy-MM-dd HH:mm").format(Calendar.getInstance().getTime());
+
+        journeyController.addJourneyToList(new Journey((new Random().nextInt(99)),"420-69","van de kaart",(new Random().nextInt(999999)),(new Random().nextInt(999999)),"help me",(new Random().nextInt(12)),(new Random().nextInt(2)),true, timestamp));
     }
 
     public ObservableList<Journey> loadJourneys(Observable observable) {
         ObservableList<Journey> journeys = FXCollections.observableArrayList();
+
+
         journeys.add(new Journey(50, "12-fx-hg", "Leiden", 18274, 77291, "Omschrijving", 2.50, 0.0, false,"datum"));
         overviewTable.setItems(journeyController.journeyList.getJourneys());
 

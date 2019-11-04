@@ -15,7 +15,7 @@
             </children></AnchorPane>
       <AnchorPane prefHeight="520.0" prefWidth="686.0">
          <children>
-            <TableView fx:id="overviewTable" prefHeight="529.0" prefWidth="686.0" style="-fx-font-size: 1.1em" AnchorPane.bottomAnchor="-229.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TableView fx:id="overviewTable" prefHeight="529.0" prefWidth="686.0" style="-fx-font-size: .8em;" AnchorPane.bottomAnchor="-229.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
                  <TableColumn fx:id="projectColumn" minWidth="140.0" text="Project" />
                  <TableColumn fx:id="distanceColumn" minWidth="100.0" text="Kilometers" />

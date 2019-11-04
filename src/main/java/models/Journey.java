@@ -84,9 +84,9 @@ public class Journey{
 
     public String getIsBilled() {
         if(isBilled){
-            return "true";
+            return "gefactureerd";
         }else{
-            return "false";
+            return "ongefactureerd";
         }
     }
 
