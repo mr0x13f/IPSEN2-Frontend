@@ -23,10 +23,9 @@ public class ManagementTabController {
     Gson gson = new Gson();
 
     //Dummy data
-    Vehicle vehicle = new Vehicle("68-kfj-3", "Jaguar E-type");
+    Vehicle dummyVehicle = new Vehicle("68-kfj-3", "Jaguar E-type");
 
     public void createVehicle(Vehicle v) {
-
         try {
             String jsonString = gson.toJson(v);
 
@@ -41,7 +40,8 @@ public class ManagementTabController {
 
     public void readVehicleFile() {
         try {
-            Vehicle newVehicle = gson.fromJson(new FileReader("savedVehicles.json"), Vehicle.class);
+            FileReader reader = new FileReader("savedVehicles.json");
+            Vehicle newVehicle = gson.fromJson(reader, Vehicle.class);
             System.out.println("Naam van voertuig: " + newVehicle.getType() + "\n" + "Kenteken van voertuig: " + newVehicle.getLicensePlate());
         }
         catch(FileNotFoundException e) {
