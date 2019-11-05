@@ -1,6 +1,6 @@
 package controllers;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 import models.Company;
@@ -22,23 +22,23 @@ public class ManagementTabController {
 
     @FXML private Tab managementTab;
 
-    Gson gson = new Gson();
+    //Gson gson = new Gson();
 
     //Dummy data
     Vehicle vehicle = new Vehicle("68-kfj-3", "Jaguar E-type");
 
     public void createVehicle(Vehicle v) {
 
-        try {
-            String jasonString = gson.toJson(v);
-
-            FileWriter writer = new FileWriter("%appdata%/kilometerregistratie/savedVehicles.json");
-            writer.write(jasonString);
-            writer.close();
-        }
-        catch (IOException e){
-            e.printStackTrace();
-        }
+//        try {
+//            String jasonString = gson.toJson(v);
+//
+//            FileWriter writer = new FileWriter("%appdata%/kilometerregistratie/savedVehicles.json");
+//            writer.write(jasonString);
+//            writer.close();
+//        }
+//        catch (IOException e){
+//            e.printStackTrace();
+//        }
     }
 
     public void combineDetails(String Company, String Project, float Rate) {

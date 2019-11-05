@@ -63,7 +63,7 @@ public class LoginController {
     @FXML
     private void goToRegisterView() throws IOException {
         Stage stage = (Stage) noAccountLabel.getScene().getWindow();
-        Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/views/registerView.fxml"));
+        Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/registerView.fxml"));
         stage.setScene(new Scene(overviewScene, 1200, 900));
     }
 
