@@ -38,19 +38,20 @@ public class LoginController {
     @FXML private Button autoLoginButton;
 
     @FXML void autoLogin() throws IOException{
+        connectToApi("nigerfagoot@gmail.com:wachtwoord");
         Stage stage = (Stage) noAccountLabel.getScene().getWindow();
         Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
         stage.setScene(new Scene(overviewScene, 1200, 900));
     }
 
-    public void connectToApi() {
+    public void connectToApi(String userCredentials) {
 
         BufferedReader reader;
         String line;
         StringBuffer responseContent = new StringBuffer();
 
         try {
-            URL apiUrl = new URL("http://localhost:8080/users/authenticate");
+            URL apiUrl = new URL("http://localhost:8080/user/authenticate");
             apiConnection = (HttpURLConnection) apiUrl.openConnection();
 
             //request setup
@@ -58,31 +59,19 @@ public class LoginController {
             apiConnection.setConnectTimeout(5000); //tIMEOUTS
             apiConnection.setReadTimeout(5000);
 
+            //String userCredentials = "nigerfagoot@gmail.com:wachtwoord"; //username:password
+            String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+            apiConnection.setRequestProperty ("Authorization", basicAuth);
+
             int status = apiConnection.getResponseCode();
             System.out.println(status);
 
-            //no connection
-            if (status > 299) {
-
-                reader = new BufferedReader(new InputStreamReader(apiConnection.getErrorStream()));
-                while((line = reader.readLine()) != null ) {
-                    responseContent.append(line);
-                }
-                reader.close();
+            reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
+            while((line = reader.readLine()) != null ) {
+                responseContent.append(line);
             }
-            //connection successfull
-            else {
-                String userCredentials = "nigerfagoot@gmail.com:wachtwoord"; //username:password
-                String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+            reader.close();
 
-                apiConnection.setRequestProperty ("Authorization", basicAuth);
-
-                reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
-                while((line = reader.readLine()) != null ) {
-                    responseContent.append(line);
-                }
-                reader.close();
-            }
             System.out.println(responseContent.toString());
         }
         catch (MalformedURLException e) {
