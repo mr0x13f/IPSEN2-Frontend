@@ -31,7 +31,6 @@ public class CreateTabView {
     @FXML
     private void saveJourney(){
 
-        String journeyId;
         int kilometers = 0;
         String destination = textDestination.getText();
         String description = textDescription.getText();
@@ -42,14 +41,13 @@ public class CreateTabView {
         double otherCost = 0.0;
         double rate = 0.0;
         String projectId = textProjectId.getText();
-        String creatorId = textCreatorId.getText();
 
         try {
             kilometers = Integer.parseInt(textKilometers.getText());
             rate = Double.parseDouble(textRate.getText());
             parkingCost = Double.parseDouble(textParkingCost.getText());
             otherCost = Double.parseDouble(textOtherCost.getText());
-            createTabController.saveJourney(kilometers, destination, description, date, licensePlate, isBilled, parkingCost, otherCost, rate, projectId, creatorId);
+            createTabController.saveJourney(kilometers, destination, description, date, licensePlate, isBilled, parkingCost, otherCost, rate, projectId);
         }
         catch (NumberFormatException e) {
             System.out.println("Not a number");

@@ -25,17 +25,19 @@ public class CreateTabController {
 
     @FXML private Tab createTab;
     private Journey newJourney;
+    private JourneyController journeyController = new JourneyController();
 
     /**
      * Takes input from textfields and turns it into a Journey model.
      * Uses the 'checkAllValues' method to guarantee the integrity of the input values.
      * @author Stan
      */
-    public void saveJourney(int kilometers, String destination, String description, String date, String licensePlate, boolean isBilled, double parkingCost, double otherCost, double rate, String projectId, String creatorId){
+    public void saveJourney(int kilometers, String destination, String description, String date, String licensePlate, boolean isBilled, double parkingCost, double otherCost, double rate, String projectId){
         if(checkAllValues(kilometers, parkingCost, otherCost, rate)) {
             newJourney = new Journey(kilometers, destination, description, date, licensePlate, isBilled, parkingCost, otherCost, rate, projectId);
 
             pushJourneyToApi("nigerfagoot@gmail.com:wachtwoord", newJourney);
+            journeyController.getJourneyList().notifyObservers();
             System.out.println("Post succesvol");
         }
         else {

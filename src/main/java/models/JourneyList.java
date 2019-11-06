@@ -16,11 +16,9 @@ public class JourneyList implements Observable {
 
     public ObservableList<Journey> journeys;
 
-    //private ArrayList<Observer> observers;
-    private List<Observer> observers = new ArrayList<Observer>();
+    private static ArrayList<Observer> observers = new ArrayList<>();
 
     public JourneyList() {
-        journeys = FXCollections.observableArrayList();
         getJourneysFromDataBase();
     }
 
@@ -34,17 +32,12 @@ public class JourneyList implements Observable {
         notifyObservers();
     }
 
-    public void fillList(Journey[] jList) {
-        for(Journey j : jList) {
-            journeys.add(j);
-        }
-    }
-
     public void getJourneysFromDataBase() {
+        journeys = FXCollections.observableArrayList();
         String jsonJourneys = HTTPRequestService.getJourneys("nigerfagoot@gmail.com:wachtwoord");
         Type type = new TypeToken<Journey[]>() {}.getType();
         Journey[] jList = (Journey[]) GsonService.fromJson(jsonJourneys, type);
-        fillList(jList);
+        journeys.addAll(jList);
     }
 
     @Override
@@ -54,12 +47,14 @@ public class JourneyList implements Observable {
 
     @Override
     public void detachObserver(Observer observer) {
-
+        observers.remove(observer);
     }
 
+    @Override
     public void notifyObservers(){
-        for (int i = 0; i< observers.size(); i++){
-            observers.get(i).update(this);
+        System.out.println("notify");
+        for (Observer o : observers) {
+            o.update(this);
         }
     }
 

@@ -19,7 +19,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 
-public class OverviewTabView implements Initializable, Observer {
+public class OverviewTabView implements Observer, Initializable {
 
     @FXML private TableView<Journey> overviewTable;
     @FXML private TableColumn<Journey, String> projectColumn;
@@ -71,7 +71,8 @@ public class OverviewTabView implements Initializable, Observer {
 
     @Override
     public void update(Observable observable) {
-        //loadJourneys(observable);
+        System.out.println("DIT IS EEN UPDATE.");
+        overviewTable.getItems().clear();
         overviewTabController.getJourneyList().getJourneysFromDataBase();
         overviewTable.setItems(overviewTabController.getJourneyList().getJourneys());
     }

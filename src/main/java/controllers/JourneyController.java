@@ -4,10 +4,10 @@ import models.Journey;
 import models.JourneyList;
 
 public class JourneyController {
-    private JourneyList journeyList;
+    private JourneyList journeyList = new JourneyList();
 
     public JourneyController() {
-        journeyList = new JourneyList();
+
     }
 
     public JourneyList getJourneyList() {
