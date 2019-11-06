@@ -44,12 +44,12 @@ public class OverviewTabView implements Initializable, Observer {
     }
 
     public void addData(){
-        journeyController.addJourneyToList(new Journey(10, "Omschrijving", "Leiden", "06-11-2019", "23-GJK-6", false, 12.50, 1.30, 0.19, "91afb2be-fc88-11e9-a888-b827eb4b9e47", "5f695cce-fb16-11e9-812f-b827eb4b9e47"));
+        journeyController.addJourneyToList(new Journey(10, "Omschrijving", "Leiden", "06-11-2019", "23-GJK-6", false, 12.50, 1.30, 0.19, "91afb2be-fc88-11e9-a888-b827eb4b9e47"));
     }
 
     public ObservableList<Journey> loadJourneys(Observable observable) {
         ObservableList<Journey> journeys = FXCollections.observableArrayList();
-        journeys.add(new Journey(10, "Omschrijving", "Leiden", "06-11-2019", "23-GJK-6", false, 12.50, 1.30, 0.19,"91afb2be-fc88-11e9-a888-b827eb4b9e47", "5f695cce-fb16-11e9-812f-b827eb4b9e47"));
+        journeys.add(new Journey(10, "Omschrijving", "Leiden", "06-11-2019", "23-GJK-6", false, 12.50, 1.30, 0.19,"91afb2be-fc88-11e9-a888-b827eb4b9e47"));
         overviewTable.setItems(journeyController.journeyList.getJourneys());
 
         return journeys;

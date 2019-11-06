@@ -23,11 +23,11 @@ public class Journey{
     private String creatorId;
 
     /**
-     * Constructor excluding journeyID
+     * Constructor excluding journeyID and creatorId
      * @author Stan
      * @version 6-11-2019
      */
-    public Journey(int kilometers, String destination, String description, String date, String licensePlate, boolean isBilled, double parkingCost, double otherCost, double rate, String projectId, String creatorId) {
+    public Journey(int kilometers, String destination, String description, String date, String licensePlate, boolean isBilled, double parkingCost, double otherCost, double rate, String projectId) {
         this.kilometers = kilometers;
         this.destination = destination;
         this.description = description;
@@ -38,7 +38,6 @@ public class Journey{
         this.otherCost = otherCost;
         this.rate = rate;
         this.projectId = projectId;
-        this.creatorId = creatorId;
 
         //observer pattern
         //this.observers = new ArrayList<Observer>();

@@ -33,9 +33,9 @@ public class CreateTabController {
      */
     public void saveJourney(int kilometers, String destination, String description, String date, String licensePlate, boolean isBilled, double parkingCost, double otherCost, double rate, String projectId, String creatorId){
         if(checkAllValues(kilometers, parkingCost, otherCost, rate)) {
-            newJourney = new Journey(kilometers, destination, description, date, licensePlate, isBilled, parkingCost, otherCost, rate, projectId, creatorId);
+            newJourney = new Journey(kilometers, destination, description, date, licensePlate, isBilled, parkingCost, otherCost, rate, projectId);
 
-            connectToApi("nigerfagoot@gmail.com:wachtwoord", newJourney);
+            pushJourneyToApi("nigerfagoot@gmail.com:wachtwoord", newJourney);
             System.out.println("Post succesvol");
         }
         else {
@@ -48,7 +48,7 @@ public class CreateTabController {
      * @author Stan
      * @version 31-10-2019
      */
-    public void connectToApi(String userCredentials, Journey journey) {  //username:password
+    public void pushJourneyToApi(String userCredentials, Journey journey) {  //username:password
 
         BufferedReader reader;
         String line;
@@ -67,9 +67,11 @@ public class CreateTabController {
             apiConnection.setRequestProperty ("Authorization", basicAuth);
             apiConnection.setRequestProperty("Accept", "application/json");
             apiConnection.setRequestProperty("Content-Type", "application/json");
-
+            apiConnection.setDoOutput(true);
             String jsonBody = gson.toJson(journey);
             System.out.println("Dit is de output: " + jsonBody);
+            apiConnection.getOutputStream().write(jsonBody.getBytes("UTF8"));
+
 
             int status = apiConnection.getResponseCode();
             System.out.println(status);
