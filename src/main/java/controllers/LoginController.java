@@ -8,8 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import models.Password;
-import overig.PasswordHasher;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -80,35 +78,16 @@ public class LoginController {
         }
     }
 
-    @FXML void login() throws InvalidKeySpecException, NoSuchAlgorithmException {
+    @FXML void login(){
         String email = emailTextfieldLogin.getText();
         String userPassword = emailTextfieldLogin.getText();
 
-        PasswordHasher passwordHasher = new PasswordHasher();
-        Password password  = passwordHasher.hashPassword(userPassword);
-
-
-        byte[] hash = password.getHash();
-
-        System.out.println("Hash:");
-
-        for(int i=0; i< hash.length ; i++) {
-            System.out.print(hash[i] + " ");
-        }
-
-        byte[] salt = password.getSalt();
-
-        System.out.println("\n Salt:");
-
-        for(int i=0; i< salt.length ; i++) {
-            System.out.print(salt[i] + " ");
-        }
     }
 
     @FXML
     private void goToRegisterView() throws IOException {
         Stage stage = (Stage) noAccountLabel.getScene().getWindow();
-        Parent overviewScene = FXMLLoader.load(getClass().getResource("../../res/views/registerView.fxml"));
+        Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/registerView.fxml"));
         stage.setScene(new Scene(overviewScene, 1200, 900));
     }
 
