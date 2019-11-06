@@ -68,4 +68,29 @@ public class Journey{
 
     //DEZE GETTERS NIET VERWIJDEREN!!!
 
+    public String getProjectId() {
+        return this.projectId;
+    }
+
+    public int getKilometers() {
+        return this.kilometers;
+    }
+
+    public String getDate() {
+        return this.date;
+    }
+
+    public String getDestination() {
+        return this.destination;
+    }
+
+    public double getRate() {
+        return this.rate;
+    }
+
+    public boolean getIsBilled() {
+        return this.isBilled;
+    }
+
+
 }

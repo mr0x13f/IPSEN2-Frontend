@@ -4,17 +4,14 @@ import models.Journey;
 import models.JourneyList;
 
 public class JourneyController {
-    static JourneyController journeyController;
-    public JourneyList journeyList = new JourneyList();
+    private JourneyList journeyList;
 
+    public JourneyController() {
+        journeyList = new JourneyList();
+    }
 
-
-    public static JourneyController getInstance(){
-        if (journeyController == null){
-            journeyController = new JourneyController();
-        }
-        return journeyController;
-
+    public JourneyList getJourneyList() {
+        return journeyList;
     }
 
 
