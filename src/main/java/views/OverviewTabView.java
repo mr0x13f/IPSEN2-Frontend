@@ -3,19 +3,17 @@ package views;
 import controllers.JourneyController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import models.Journey;
-import models.JourneyList;
 import observables.Observable;
 import observers.Observer;
 
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Calendar;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -45,6 +43,23 @@ public class OverviewTabView implements Initializable, Observer {
  
         journeyController = JourneyController.getInstance();
         journeyController.journeyList.attachObserver(this);
+
+        MenuItem mi = new MenuItem("Delete");
+        mi.setOnAction((ActionEvent event) -> {
+            Journey journey = overviewTable.getSelectionModel().getSelectedItem();
+            deleteJourney(journey);
+        });
+
+        ContextMenu menu = new ContextMenu();
+        menu.getItems().add(mi);
+        overviewTable.setContextMenu(menu);
+
+
+    }
+
+    private void deleteJourney(Journey journey){
+        //String journeyId = journey.getJourneyId();
+
     }
 
     public void addData(){

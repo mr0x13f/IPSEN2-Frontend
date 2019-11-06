@@ -38,7 +38,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Button>
-      <Label fx:id="alreadyHaveAccount" alignment="CENTER" layoutX="674.0" layoutY="560.0" onMouseClicked="#goToLoginView" text="I already have an account!" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="600.0">
+      <Label fx:id="alreadyHasAccount" alignment="CENTER" layoutX="674.0" layoutY="560.0" onMouseClicked="#goToLoginView" text="I already have an account!" AnchorPane.leftAnchor="575.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="600.0">
          <font>
             <Font name="System Italic" size="14.0" />
          </font></Label>

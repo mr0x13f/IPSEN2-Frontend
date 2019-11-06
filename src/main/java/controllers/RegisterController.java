@@ -30,7 +30,7 @@ public class RegisterController {
     @FXML private TextField passwordTextfieldRegister;
     @FXML private TextField confirmPasswordTextfieldRegsiter;
     @FXML private Button registerButton;
-    @FXML private Label alreadyHaveAccount;
+    @FXML private Label alreadyHasAccount;
 
 
 
@@ -130,7 +130,7 @@ public class RegisterController {
     @FXML
     private void goToLoginView(){
         try{
-            Stage stage = (Stage) alreadyHaveAccount.getScene().getWindow();
+            Stage stage = (Stage) alreadyHasAccount.getScene().getWindow();
             Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/loginView.fxml"));
             stage.setScene(new Scene(overviewScene, 1200, 900));
         }catch(IOException e){
