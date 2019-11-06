@@ -9,17 +9,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import models.Password;
-import models.TempUser;
 import models.User;
-import overig.PasswordHasher;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 
@@ -47,19 +43,10 @@ public class RegisterController {
 
         if(confirmPassword(userPassword,confirmPassword)&&isEmailValid(email)){
             try{
-                System.out.println("Created user object");
-                PasswordHasher passwordHasher = new PasswordHasher();
-                Password password  = passwordHasher.hashPassword(userPassword);
 
-                String hashedPassword = password.getHash().toString();
-                String salt = password.getSalt().toString();
+                User user = new User(fullName ,email, userPassword);
 
-                //todo change this to just User model
-                //User user = new User(0, email, fullName, hashedPassword, salt);
-                TempUser tempUser = new TempUser(fullName, userPassword, email);
-
-                //todo also change this then
-                sendUserToApi(tempUser);
+                sendUserToApi(user);
                 goToLoginView();
 
             }catch(Exception e){
@@ -69,8 +56,7 @@ public class RegisterController {
 
     }
 
-    //todo also change here
-    private void sendUserToApi(TempUser user) {
+    private void sendUserToApi(User user) {
         System.out.println("try to send user to API");
         String url = "http://localhost:8080/user/register";
         try {
