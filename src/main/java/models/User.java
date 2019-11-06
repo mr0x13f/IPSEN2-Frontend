@@ -2,29 +2,19 @@ package models;
 
 public class User {
 
-    private int UserId;
     private String email;
     private String name;
     private String password;
-    private String salt;
 
 
 
-    public User(int userId, String name, String email, String password, String salt) {
-        this.UserId = userId;
+    public User(String name, String email, String password) {
         this.email = email;
         this.password = password;
         this.name = name;
-        this.salt = salt;
     }
 
-    public int getUserId() {
-        return UserId;
-    }
 
-    public void setUserId(int userId) {
-        UserId = userId;
-    }
 
     public String getEmail() {
         return email;
@@ -50,11 +40,4 @@ public class User {
         this.name = name;
     }
 
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
 }
