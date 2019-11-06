@@ -411,7 +411,7 @@
       <workItem from="1572599663786" duration="593000" />
       <workItem from="1572858865889" duration="2646000" />
       <workItem from="1573031839600" duration="2960000" />
-      <workItem from="1573050539345" duration="323000" />
+      <workItem from="1573050539345" duration="425000" />
     </task>
     <task id="LOCAL-00001" summary="controllerklasse geadd martijn">
       <created>1570627340627</created>
@@ -431,7 +431,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="107440000" />
+    <option name="totallyTimeSpent" value="107542000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
