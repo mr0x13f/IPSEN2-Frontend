@@ -9,32 +9,59 @@ import java.util.List;
 
 public class Journey{
 
-    private int journeyId;
-    private int distance;
-    private String vehicleLicensePlate;
+    private String journeyId;
+    private int kilometers;
     private String destination;
-    private int rateId;
-    private int projectId;
     private String description;
+    private String date;
+    private String licensePlate;
+    private boolean isBilled;
     private double parkingCost;
     private double otherCost;
-    private int creatorId;
-    private boolean isBilled; //Nog toevoegen in de rest van de code
-    private String datetime;
+    private double rate;
+    private String projectId;
+    private String creatorId;
 
-
-
-    public Journey(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, Boolean isBilled, String datetime) {
-        this.distance = distance;
-        this.vehicleLicensePlate = licensePlate;
+    /**
+     * Constructor excluding journeyID
+     * @author Stan
+     * @version 6-11-2019
+     */
+    public Journey(int kilometers, String destination, String description, String date, String licensePlate, boolean isBilled, double parkingCost, double otherCost, double rate, String projectId, String creatorId) {
+        this.kilometers = kilometers;
         this.destination = destination;
-        this.rateId = rateId;
-        this.projectId = projectId;
         this.description = description;
+        this.date = date;
+        this.licensePlate = licensePlate;
+        this.isBilled = isBilled;
         this.parkingCost = parkingCost;
         this.otherCost = otherCost;
+        this.rate = rate;
+        this.projectId = projectId;
+        this.creatorId = creatorId;
+
+        //observer pattern
+        //this.observers = new ArrayList<Observer>();
+    }
+
+    /**
+     * Constructor including journeyID as the last parameter
+     * @author Stan
+     * @version 6-11-2019
+     */
+    public Journey(int kilometers, String destination, String description, String date, String licensePlate, boolean isBilled, double parkingCost, double otherCost, double rate, String projectId, String creatorId, String journeyId) {
+        this.kilometers = kilometers;
+        this.destination = destination;
+        this.description = description;
+        this.date = date;
+        this.licensePlate = licensePlate;
         this.isBilled = isBilled;
-        this.datetime = datetime;
+        this.parkingCost = parkingCost;
+        this.otherCost = otherCost;
+        this.rate = rate;
+        this.projectId = projectId;
+        this.creatorId = creatorId;
+        this.journeyId = journeyId;
 
         //observer pattern
         //this.observers = new ArrayList<Observer>();
@@ -42,55 +69,4 @@ public class Journey{
 
     //DEZE GETTERS NIET VERWIJDEREN!!!
 
-    public int getJourneyId() {
-        return journeyId;
-    }
-
-    public int getDistance() {
-        return distance;
-    }
-
-    public String getVehicleLicensePlate() {
-        return vehicleLicensePlate;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public int getRateId() {
-        return rateId;
-    }
-
-    public int getProjectId() {
-        return projectId;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public double getParkingCost() {
-        return parkingCost;
-    }
-
-    public double getOtherCost() {
-        return otherCost;
-    }
-
-    public int getCreatorId() {
-        return creatorId;
-    }
-
-    public String getIsBilled() {
-        if(isBilled){
-            return "true";
-        }else{
-            return "false";
-        }
-    }
-
-    public String getDatetime() {
-        return datetime;
-    }
 }

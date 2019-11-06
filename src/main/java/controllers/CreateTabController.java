@@ -1,5 +1,6 @@
 package controllers;
 
+import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 import models.Journey;
@@ -10,12 +11,15 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Base64;
 
 /**
  * Controller for the creation tab where new journeys can be created
  * @version 31-10-2019
  */
 public class CreateTabController {
+
+    Gson gson = new Gson();
 
     private static HttpURLConnection apiConnection;
 
@@ -26,29 +30,17 @@ public class CreateTabController {
      * Takes input from textfields and turns it into a Journey model.
      * Uses the 'checkAllValues' method to guarantee the integrity of the input values.
      * @author Stan
-     * @param distance
-     * @param licensePlate
-     * @param destination
-     * @param rateId
-     * @param projectId
-     * @param description
-     * @param parkingCost
-     * @param otherCost
-     * @param isBilled
-     * @param date
      */
-    public void saveJourney(int distance, String licensePlate, String destination, int rateId, int projectId, String description, double parkingCost, double otherCost, boolean isBilled, String date){
-        if(checkAllValues(distance, rateId, projectId, parkingCost, otherCost)) {
-            newJourney = new Journey(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled, date);
-            System.out.println("Beschrijving: " + newJourney.getDescription());
+    public void saveJourney(int kilometers, String destination, String description, String date, String licensePlate, boolean isBilled, double parkingCost, double otherCost, double rate, String projectId, String creatorId){
+        if(checkAllValues(kilometers, parkingCost, otherCost, rate)) {
+            newJourney = new Journey(kilometers, destination, description, date, licensePlate, isBilled, parkingCost, otherCost, rate, projectId, creatorId);
+
+            connectToApi("nigerfagoot@gmail.com:wachtwoord", newJourney);
+            System.out.println("Post succesvol");
         }
         else {
             System.out.println("Error gevonden!");
         }
-    }
-
-    public void testAPI() {
-        connectToApi(); //To test if API works
     }
 
     /**
@@ -56,47 +48,41 @@ public class CreateTabController {
      * @author Stan
      * @version 31-10-2019
      */
-    public void connectToApi() {
+    public void connectToApi(String userCredentials, Journey journey) {  //username:password
 
         BufferedReader reader;
         String line;
         StringBuffer responseContent = new StringBuffer();
 
         try {
-            URL apiUrl = new URL("http://localhost:8080/journey/");
+            URL apiUrl = new URL("http://localhost:8080/journey");
             apiConnection = (HttpURLConnection) apiUrl.openConnection();
 
             //request setup
-            apiConnection.setRequestMethod("GET");
-            apiConnection.setConnectTimeout(5000);
+            apiConnection.setRequestMethod("POST");
+            apiConnection.setConnectTimeout(5000); //Timeout timer
             apiConnection.setReadTimeout(5000);
+
+            String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+            apiConnection.setRequestProperty ("Authorization", basicAuth);
+            apiConnection.setRequestProperty("Accept", "application/json");
+            apiConnection.setRequestProperty("Content-Type", "application/json");
+
+            String jsonBody = gson.toJson(journey);
+            System.out.println("Dit is de output: " + jsonBody);
 
             int status = apiConnection.getResponseCode();
             System.out.println(status);
 
-            //no connection
-//            if (status > 299) {
-//                reader = new BufferedReader(new InputStreamReader(apiConnection.getErrorStream()));
-//                while((line = reader.readLine()) != null ) {
-//                    responseContent.append(line);
-//                }
-//                reader.close();
-//            }
-//            //connection successfull
-//            else {
-//                reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
-//                while((line = reader.readLine()) != null ) {
-//                    responseContent.append(line);
-//                }
-//                reader.close();
-//            }
+            reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
+            while((line = reader.readLine()) != null ) {
+                responseContent.append(line);
+            }
+            reader.close();
             System.out.println(responseContent.toString());
         }
-        catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        catch (MalformedURLException e) { e.printStackTrace(); }
+        catch (IOException e) { e.printStackTrace(); }
         //closes the connection
         finally {
             apiConnection.disconnect();
@@ -107,22 +93,20 @@ public class CreateTabController {
      * Checks if the values entered by the user are within the set boundaries.
      * Uses the 'checkIntValue' and 'checkDoubleValue' methods respectively.
      * @author Stan
-     * @param distance
-     * @param rateId
-     * @param projectId
+     * @param kilometers
      * @param parkingCost
      * @param otherCost
+     * @param rate
      * @return
      */
-    private boolean checkAllValues(int distance, int rateId, int projectId, double parkingCost, double otherCost) {
+    private boolean checkAllValues(int kilometers, double parkingCost, double otherCost, double rate) {
         boolean accepted = true;
-        boolean d = checkIntValue(distance, 0, 1000, "afstand");
-        boolean r = checkIntValue(rateId, 10000, 99999, "rate ID");
-        boolean p = checkIntValue(projectId, 10000, 99999, "project ID");
+        boolean k = checkIntValue(kilometers, 0, 1000, "afstand");
         boolean pc = checkDoubleValue(parkingCost, -0.00001, 999.99, "parkeerkosten");
         boolean oc = checkDoubleValue(otherCost, -0.00001, 999.99, "overige kosten");
+        boolean r = checkDoubleValue(rate, -0.00001, 999.99, "rate");
 
-        if(!(d && r && p && pc && oc)) {
+        if(!(k && r && pc && oc && r)) {
             accepted = false;
         }
         return accepted;

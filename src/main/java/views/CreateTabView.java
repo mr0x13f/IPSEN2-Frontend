@@ -11,14 +11,16 @@ import controllers.CreateTabController;
  */
 public class CreateTabView {
 
-    @FXML TextField textDistance;
+    @FXML TextField textKilometers;
     @FXML TextField textLicensePlate;
     @FXML TextField textDestination;
-    @FXML TextField textRateId;
+    @FXML TextField textRate;
     @FXML TextField textProjectId;
     @FXML TextField textDescription;
     @FXML TextField textParkingCost;
     @FXML TextField textOtherCost;
+    @FXML TextField textCreatorId;
+    @FXML TextField textDate;
 
     CreateTabController createTabController = new CreateTabController();
 
@@ -29,30 +31,28 @@ public class CreateTabView {
     @FXML
     private void saveJourney(){
 
-        int distance = 0;
-        String licensePlate = textLicensePlate.getText();
+        String journeyId;
+        int kilometers = 0;
         String destination = textDestination.getText();
-        int rateId = 0;
-        int projectId = 0;
         String description = textDescription.getText();
+        String date = textDate.getText();
+        String licensePlate = textLicensePlate.getText();
+        boolean isBilled = false;
         double parkingCost = 0.0;
         double otherCost = 0.0;
-        boolean isBilled = false;
-        String date = "heyy timestamp";
+        double rate = 0.0;
+        String projectId = textProjectId.getText();
+        String creatorId = textCreatorId.getText();
 
         try {
-            distance = Integer.parseInt(textDistance.getText());
-            rateId = Integer.parseInt(textRateId.getText());
-            projectId = Integer.parseInt(textProjectId.getText());
+            kilometers = Integer.parseInt(textKilometers.getText());
+            rate = Double.parseDouble(textRate.getText());
             parkingCost = Double.parseDouble(textParkingCost.getText());
             otherCost = Double.parseDouble(textOtherCost.getText());
-            createTabController.saveJourney(distance, licensePlate, destination, rateId, projectId, description, parkingCost, otherCost, isBilled, date);
+            createTabController.saveJourney(kilometers, destination, description, date, licensePlate, isBilled, parkingCost, otherCost, rate, projectId, creatorId);
         }
         catch (NumberFormatException e) {
             System.out.println("Not a number");
-
-            //remove when done testing
-            createTabController.testAPI();
         }
     }
 }

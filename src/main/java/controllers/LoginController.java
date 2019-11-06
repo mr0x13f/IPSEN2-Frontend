@@ -44,7 +44,7 @@ public class LoginController {
         stage.setScene(new Scene(overviewScene, 1200, 900));
     }
 
-    public void connectToApi(String userCredentials) {
+    public void connectToApi(String userCredentials) {  //username:password
 
         BufferedReader reader;
         String line;
@@ -59,7 +59,6 @@ public class LoginController {
             apiConnection.setConnectTimeout(5000); //tIMEOUTS
             apiConnection.setReadTimeout(5000);
 
-            //String userCredentials = "nigerfagoot@gmail.com:wachtwoord"; //username:password
             String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
             apiConnection.setRequestProperty ("Authorization", basicAuth);
 
@@ -71,14 +70,10 @@ public class LoginController {
                 responseContent.append(line);
             }
             reader.close();
-
             System.out.println(responseContent.toString());
         }
-        catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        catch (MalformedURLException e) { e.printStackTrace(); }
+        catch (IOException e) { e.printStackTrace(); }
         //closes the connection
         finally {
             apiConnection.disconnect();
