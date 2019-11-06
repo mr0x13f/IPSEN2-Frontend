@@ -8,8 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import models.Password;
-import overig.PasswordHasher;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,8 +15,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
 
 public class LoginController {
@@ -37,18 +33,46 @@ public class LoginController {
 
     @FXML private Button autoLoginButton;
 
-    @FXML void autoLogin() throws IOException{
-        connectToApi("nigerfagoot@gmail.com:wachtwoord");
-        Stage stage = (Stage) noAccountLabel.getScene().getWindow();
-        Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
-        stage.setScene(new Scene(overviewScene, 1200, 900));
+    @FXML void autoLogin() {
+
+        login("nigerfagoot@gmail.com", "wachtwoord");
     }
 
-    public void connectToApi(String userCredentials) {
+    @FXML void login() {
+
+        login(emailTextfieldLogin.getText(), passwordTextfieldLogin.getText());
+
+    }
+
+    private void login(String username, String password) {
+
+        if (authenticate(username, password)) {
+
+            // Login successful; show masterview
+            try {
+                Stage stage = (Stage) noAccountLabel.getScene().getWindow();
+                Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
+                stage.setScene(new Scene(overviewScene, 1200, 900));
+            } catch (java.io.IOException e) {
+
+            }
+
+        } else {
+
+            // Login error
+
+            // TODO: Iets laten zien dat het verkeerd is ofzo
+            System.out.println("LoginController: LOGIN ERROR" );
+
+        }
+    }
+
+    public boolean authenticate(String username, String password) {
 
         BufferedReader reader;
         String line;
         StringBuffer responseContent = new StringBuffer();
+        int status = 0;
 
         try {
             URL apiUrl = new URL("http://localhost:8080/user/authenticate");
@@ -56,23 +80,19 @@ public class LoginController {
 
             //request setup
             apiConnection.setRequestMethod("GET");
-            apiConnection.setConnectTimeout(5000); //tIMEOUTS
+            apiConnection.setConnectTimeout(5000);
             apiConnection.setReadTimeout(5000);
 
-            //String userCredentials = "nigerfagoot@gmail.com:wachtwoord"; //username:password
-            String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+            String basicAuth = "Basic " + new String(Base64.getEncoder().encode((username + ":" + password).getBytes()));
             apiConnection.setRequestProperty ("Authorization", basicAuth);
 
-            int status = apiConnection.getResponseCode();
-            System.out.println(status);
+            status = apiConnection.getResponseCode();
 
             reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
             while((line = reader.readLine()) != null ) {
                 responseContent.append(line);
             }
             reader.close();
-
-            System.out.println(responseContent.toString());
         }
         catch (MalformedURLException e) {
             e.printStackTrace();
@@ -83,31 +103,8 @@ public class LoginController {
         finally {
             apiConnection.disconnect();
         }
-    }
 
-    @FXML void login() throws InvalidKeySpecException, NoSuchAlgorithmException {
-        String email = emailTextfieldLogin.getText();
-        String userPassword = emailTextfieldLogin.getText();
-
-        PasswordHasher passwordHasher = new PasswordHasher();
-        Password password  = passwordHasher.hashPassword(userPassword);
-
-
-        byte[] hash = password.getHash();
-
-        System.out.println("Hash:");
-
-        for(int i=0; i< hash.length ; i++) {
-            System.out.print(hash[i] + " ");
-        }
-
-        byte[] salt = password.getSalt();
-
-        System.out.println("\n Salt:");
-
-        for(int i=0; i< salt.length ; i++) {
-            System.out.print(salt[i] + " ");
-        }
+        return status == 200;
     }
 
     @FXML

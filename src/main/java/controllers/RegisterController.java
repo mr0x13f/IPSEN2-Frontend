@@ -8,9 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import models.Password;
 import models.User;
-import overig.PasswordHasher;
 
 import java.io.IOException;
 
@@ -26,7 +24,7 @@ public class RegisterController {
 
 
 
-    @FXML
+    /*@FXML
     private void registerNewUser(){
 
 
@@ -64,7 +62,7 @@ public class RegisterController {
 
 
 
-    }
+    }*/
 
     public boolean confirmPassword(String password, String confirmPassword){
         if(password.equals(confirmPassword)&& password.length()>5){
