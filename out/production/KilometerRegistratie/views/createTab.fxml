@@ -18,19 +18,17 @@
                 <TextField fx:id="textDestination" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
                 <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Rate" />
                 <TextField fx:id="textRate" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Project ID: 91afb2be-fc88-11e9-a888-b827eb4b9e47" />
-                <TextField fx:id="textProjectId" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
+                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Project ID" />
+                <TextField fx:id="textProjectId" text="91afb2be-fc88-11e9-a888-b827eb4b9e47" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
                 <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Description" />
                 <TextField fx:id="textDescription" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
                 <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Parking cost" />
                 <TextField fx:id="textParkingCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
                 <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Other cost" />
                 <TextField fx:id="textOtherCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Creator ID" />
-                <TextField fx:id="textCreatorId" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
                 <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Date  yyyy-mm-dd hh:mm:ss.000" />
                 <TextField fx:id="textDate" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Button mnemonicParsing="false" onAction="#saveJourney" text="Opslaan" />
+                <Button mnemonicParsing="false" onAction="#saveJourney" text="Opslaan"/>
             </children>
         </VBox>
     </children>
