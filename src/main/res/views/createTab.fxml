@@ -9,27 +9,27 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: ababab; -fx-background-color: #efefef; -fx-border-width: 1px;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.CreateTabView">
     <children>
-        <VBox prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox prefHeight="0.0" prefWidth="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" style="-fx-background-color: #F9F9F9; -fx-border-width: 0; -fx-padding: 8 0 0 10; -fx-spacing: 5">
             <children>
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Distance in KM" />
-                <TextField fx:id="textKilometers" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Vehicle license plate" />
-                <TextField fx:id="textLicensePlate" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Destination" />
-                <TextField fx:id="textDestination" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Rate" />
-                <TextField fx:id="textRate" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Project ID" />
-                <TextField fx:id="textProjectId" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" text="91afb2be-fc88-11e9-a888-b827eb4b9e47" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Description" />
-                <TextField fx:id="textDescription" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Parking cost" />
-                <TextField fx:id="textParkingCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Other cost" />
-                <TextField fx:id="textOtherCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Date (yyyy-mm-dd hh:mm:ss.000)" />
-                <DatePicker fx:id="dateChooser" showWeekNumbers="false" />
-                <Button mnemonicParsing="false" onAction="#saveJourney" text="Opslaan" />
+                <Label style="-fx-font-size: 0.5em" text="Distance in KM" />
+                <TextField fx:id="textKilometers" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <Label style="-fx-font-size: 0.5em" text="Vehicle license plate" />
+                <TextField fx:id="textLicensePlate" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <Label style="-fx-font-size: 0.5em" text="Destination" />
+                <TextField fx:id="textDestination" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <Label style="-fx-font-size: 0.5em" text="Rate" />
+                <TextField fx:id="textRate" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <Label style="-fx-font-size: 0.5em" text="Project ID" />
+                <TextField fx:id="textProjectId" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" text="91afb2be-fc88-11e9-a888-b827eb4b9e47" />
+                <Label style="-fx-font-size: 0.5em" text="Description" />
+                <TextField fx:id="textDescription" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <Label style="-fx-font-size: 0.5em" text="Parking cost" />
+                <TextField fx:id="textParkingCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <Label style="-fx-font-size: 0.5em" text="Other cost" />
+                <TextField fx:id="textOtherCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <Label style="-fx-font-size: 0.5em" text="Date (yyyy-mm-dd hh:mm:ss.000)" />
+                <DatePicker fx:id="dateChooser" showWeekNumbers="false" style="-fx-font-size: 1.0em; -fx-max-width: 300px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px"/>
+                <Button mnemonicParsing="false" onAction="#saveJourney" text="Opslaan" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50; -fx-font-size: 0.7em"/>
             </children>
         </VBox>
     </children>
