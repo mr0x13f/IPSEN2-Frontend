@@ -1,6 +1,7 @@
 package models;
 
 import com.google.gson.reflect.TypeToken;
+import controllers.LoginController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import observables.Observable;
@@ -30,11 +31,11 @@ public class JourneyList implements Observable {
         journeys.add(journey);
         System.out.println(journeys.size());
         notifyObservers();
-    }
+}
 
     public void getJourneysFromDataBase() {
         journeys = FXCollections.observableArrayList();
-        String jsonJourneys = HTTPRequestService.getJourneys("nigerfagoot@gmail.com:wachtwoord");
+        String jsonJourneys = HTTPRequestService.getJourneys(LoginController.username + ":" + LoginController.password);
         Type type = new TypeToken<Journey[]>() {}.getType();
         Journey[] jList = (Journey[]) GsonService.fromJson(jsonJourneys, type);
         journeys.addAll(jList);

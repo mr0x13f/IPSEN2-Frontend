@@ -26,6 +26,9 @@ public class LoginController {
     @FXML private TextField passwordTextfieldLogin;
     @FXML private Button autoLoginButton;
 
+    public static String username;
+    public static String password;
+
     @FXML void autoLogin() {
 
         login("nigerfagoot@gmail.com", "wachtwoord");
@@ -38,6 +41,9 @@ public class LoginController {
     }
 
     private void login(String username, String password) {
+
+        this.username = username;
+        this.password = password;
 
         if (authenticate(username, password)) {
 
