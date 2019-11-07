@@ -18,7 +18,12 @@ import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
 
-
+/**
+ * View shows all journeys that the current user owns.
+ *
+ * @author TimvHal
+ * @version 06-11-2019
+ */
 public class OverviewTabView implements Observer, Initializable {
 
     @FXML private TableView<Journey> overviewTable;
@@ -47,19 +52,6 @@ public class OverviewTabView implements Observer, Initializable {
 
     }
 
-    public void addData(){
-        journeyController.addJourneyToList(new Journey(10, "Omschrijving", "Leiden", "06-11-2019", "23-GJK-6", false, 12.50, 1.30, 0.19, "91afb2be-fc88-11e9-a888-b827eb4b9e47"));
-    }
-
- /*   public ObservableList<Journey> loadJourneys(Observable observable) {
-        ObservableList<Journey> journeys = FXCollections.observableArrayList();
-        journeys.add(new Journey(10, "Omschrijving", "Leiden", "06-11-2019", "23-GJK-6", false, 12.50, 1.30, 0.19,"91afb2be-fc88-11e9-a888-b827eb4b9e47"));
-        overviewTable.setItems(journeyController.getJourneyList().getJourneys());
-
-        return journeys;
-    }*/
-
-
     private void sortByMonth(){
 
     }
@@ -68,15 +60,10 @@ public class OverviewTabView implements Observer, Initializable {
 
     }
 
-
     @Override
     public void update(Observable observable) {
-        System.out.println("DIT IS EEN UPDATE.");
-        overviewTable.getItems().clear();
         overviewTabController.getJourneyList().getJourneysFromDataBase();
         overviewTable.setItems(overviewTabController.getJourneyList().getJourneys());
     }
-
-    //misschien ook nog sortByProject ????
 
 }

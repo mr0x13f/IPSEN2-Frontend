@@ -9,6 +9,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Base64;
 
+/**
+ * HTTPRequestService for all HTTP requests.
+ *
+ * @author TimvHal
+ * @version 06-11-2019
+ */
 public class HTTPRequestService {
 
     private static HttpURLConnection apiConnection;
@@ -17,14 +23,15 @@ public class HTTPRequestService {
     private static String line;
     private static StringBuffer responseContent;
 
-    public static String getJourneys(String userCredentials) {
+    public static String setupRequest(String url, String type, String userCredentials) {
         responseContent = new StringBuffer();
         try {
-            apiUrl = new URL("http://localhost:8080/journey");
+            type.toUpperCase();
+            apiUrl = new URL(url);
             apiConnection = (HttpURLConnection) apiUrl.openConnection();
 
             //request setup
-            apiConnection.setRequestMethod("GET");
+            apiConnection.setRequestMethod(type);
             apiConnection.setConnectTimeout(5000); //Timeout timer
             apiConnection.setReadTimeout(5000);
 
@@ -41,8 +48,13 @@ public class HTTPRequestService {
         catch (Exception e) { e.printStackTrace(); }
         //closes the connection
         finally {
-        apiConnection.disconnect();
+            apiConnection.disconnect();
         }
         return responseContent.toString();
     }
+
+    public static String getJourneys(String userCredentials) {
+        return setupRequest("http://localhost:8080/journey", "GET", userCredentials);
+    }
+
 }

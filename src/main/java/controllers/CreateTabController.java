@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 import models.Journey;
+import services.GsonService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,15 +16,13 @@ import java.util.Base64;
 
 /**
  * Controller for the creation tab where new journeys can be created
- * @version 31-10-2019
+ * @author Stan, TimvHal
+ * @version 06-11-2019
  */
 public class CreateTabController {
 
-    Gson gson = new Gson();
-
     private static HttpURLConnection apiConnection;
 
-    @FXML private Tab createTab;
     private Journey newJourney;
     private JourneyController journeyController = new JourneyController();
 
@@ -70,7 +69,7 @@ public class CreateTabController {
             apiConnection.setRequestProperty("Accept", "application/json");
             apiConnection.setRequestProperty("Content-Type", "application/json");
             apiConnection.setDoOutput(true);
-            String jsonBody = gson.toJson(journey);
+            String jsonBody = GsonService.toJson(journey);
             System.out.println("Dit is de output: " + jsonBody);
             apiConnection.getOutputStream().write(jsonBody.getBytes("UTF8"));
 

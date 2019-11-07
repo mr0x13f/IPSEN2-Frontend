@@ -32,8 +32,9 @@ public class LoginController {
     @FXML private Label noAccountLabel;
     @FXML private TextField emailTextfieldLogin;
     @FXML private TextField passwordTextfieldLogin;
-
     @FXML private Button autoLoginButton;
+    private String email;
+    private String password;
 
     @FXML void autoLogin() throws IOException{
         connectToApi("nigerfagoot@gmail.com:wachtwoord");
@@ -79,9 +80,17 @@ public class LoginController {
     }
 
     @FXML void login(){
-        String email = emailTextfieldLogin.getText();
-        String userPassword = emailTextfieldLogin.getText();
-
+        email = emailTextfieldLogin.getText();
+        password = passwordTextfieldLogin.getText();
+        connectToApi(email + ":" + password);
+        Stage stage = (Stage) noAccountLabel.getScene().getWindow();
+        Parent overviewScene = null;
+        try {
+            overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setScene(new Scene(overviewScene, 1200, 900));
     }
 
     @FXML
