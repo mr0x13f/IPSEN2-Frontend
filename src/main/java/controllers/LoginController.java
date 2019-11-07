@@ -15,39 +15,57 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
 
 public class LoginController {
 
     private static HttpURLConnection apiConnection;
 
-    public void Authencate(){}
-
-    public void AccesGranted(){}
-
-    public void AccesDenied(){}
-
     @FXML private Label noAccountLabel;
     @FXML private TextField emailTextfieldLogin;
     @FXML private TextField passwordTextfieldLogin;
     @FXML private Button autoLoginButton;
-    private String email;
-    private String password;
 
-    @FXML void autoLogin() throws IOException{
-        connectToApi("nigerfagoot@gmail.com:wachtwoord");
-        Stage stage = (Stage) noAccountLabel.getScene().getWindow();
-        Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
-        stage.setScene(new Scene(overviewScene, 1200, 900));
+    @FXML void autoLogin() {
+
+        login("nigerfagoot@gmail.com", "wachtwoord");
     }
 
-    public void connectToApi(String userCredentials) {  //username:password
+    @FXML void login() {
+
+        login(emailTextfieldLogin.getText(), passwordTextfieldLogin.getText());
+
+    }
+
+    private void login(String username, String password) {
+
+        if (authenticate(username, password)) {
+
+            // Login successful; show masterview
+            try {
+                Stage stage = (Stage) noAccountLabel.getScene().getWindow();
+                Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
+                stage.setScene(new Scene(overviewScene, 1200, 900));
+            } catch (java.io.IOException e) {
+
+            }
+
+        } else {
+
+            // Login error
+
+            // TODO: Iets laten zien dat het verkeerd is ofzo
+            System.out.println("LoginController: LOGIN ERROR" );
+
+        }
+    }
+
+    public boolean authenticate(String username, String password) {
 
         BufferedReader reader;
         String line;
         StringBuffer responseContent = new StringBuffer();
+        int status = 0;
 
         try {
             URL apiUrl = new URL("http://localhost:8080/user/authenticate");
@@ -55,42 +73,31 @@ public class LoginController {
 
             //request setup
             apiConnection.setRequestMethod("GET");
-            apiConnection.setConnectTimeout(5000); //tIMEOUTS
+            apiConnection.setConnectTimeout(5000);
             apiConnection.setReadTimeout(5000);
 
-            String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+            String basicAuth = "Basic " + new String(Base64.getEncoder().encode((username + ":" + password).getBytes()));
             apiConnection.setRequestProperty ("Authorization", basicAuth);
 
-            int status = apiConnection.getResponseCode();
-            System.out.println(status);
+            status = apiConnection.getResponseCode();
 
             reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
             while((line = reader.readLine()) != null ) {
                 responseContent.append(line);
             }
             reader.close();
-            System.out.println(responseContent.toString());
         }
-        catch (MalformedURLException e) { e.printStackTrace(); }
-        catch (IOException e) { e.printStackTrace(); }
+        catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //closes the connection
         finally {
             apiConnection.disconnect();
         }
-    }
 
-    @FXML void login(){
-        email = emailTextfieldLogin.getText();
-        password = passwordTextfieldLogin.getText();
-        connectToApi(email + ":" + password);
-        Stage stage = (Stage) noAccountLabel.getScene().getWindow();
-        Parent overviewScene = null;
-        try {
-            overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setScene(new Scene(overviewScene, 1200, 900));
+        return status == 200;
     }
 
     @FXML
