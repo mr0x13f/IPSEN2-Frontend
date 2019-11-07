@@ -2,8 +2,13 @@ package views;
 
 import javafx.fxml.FXML;
 
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import controllers.CreateTabController;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * View for the create tab.
@@ -19,8 +24,7 @@ public class CreateTabView {
     @FXML TextField textDescription;
     @FXML TextField textParkingCost;
     @FXML TextField textOtherCost;
-    @FXML TextField textCreatorId;
-    @FXML TextField textDate;
+    @FXML DatePicker dateChooser;
 
     CreateTabController createTabController = new CreateTabController();
 
@@ -31,10 +35,19 @@ public class CreateTabView {
     @FXML
     private void saveJourney(){
 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate pickedDate = dateChooser.getValue();
+        String userDate = (formatter.format(pickedDate) + " 00:00:00.000");
+
+        System.out.println(userDate);
+
+        //LocalDateTime currentTime = LocalDateTime.now();
+        //String currentTimeString = formatter.format(currentTime) + ".000";
+
         int kilometers = 0;
         String destination = textDestination.getText();
         String description = textDescription.getText();
-        String date = textDate.getText();
+        String date = userDate;
         String licensePlate = textLicensePlate.getText();
         boolean isBilled = false;
         double parkingCost = 0.0;

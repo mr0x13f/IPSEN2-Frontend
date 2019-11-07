@@ -70,17 +70,8 @@ public class ManagementTabView implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        //Toevoegen gegevens
-        CompanyBox.setValue("no company");
-        CompanyBox.setItems(CompanyList);
-
-        ProjectBox.setValue("no project");
-        ProjectBox.setItems(ProjectList);
-
         DeleteCarBox.setValue("---");
         DeleteCarBox.setItems(DeleteCarList);
-
     }
 
     @FXML
