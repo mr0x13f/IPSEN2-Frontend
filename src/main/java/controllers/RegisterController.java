@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 
 public class RegisterController {
@@ -27,6 +28,7 @@ public class RegisterController {
     @FXML private TextField confirmPasswordTextfieldRegister;
     @FXML private Button registerButton;
     @FXML private Label alreadyHasAccount;
+    @FXML private Label errorMessageLabel;
 
 
 
@@ -40,20 +42,25 @@ public class RegisterController {
         String userPassword = passwordTextfieldRegister.getText();
         String confirmPassword = confirmPasswordTextfieldRegister.getText();
 
+        if(checkEmptyFields()) {
+            if (isEmailValid(email)) {
+                if (passwordCorrectTokenAmount(userPassword)) {
+                    if (confirmPassword(userPassword, confirmPassword)) {
+                        try {
+                            errorMessageLabel.setText("");
+                            User user = new User(fullName, email, userPassword);
 
-        if(confirmPassword(userPassword,confirmPassword)&&isEmailValid(email)){
-            try{
+                            sendUserToApi(user);
+                            goToLoginView();
 
-                User user = new User(fullName ,email, userPassword);
-
-                sendUserToApi(user);
-                goToLoginView();
-
-            }catch(Exception e){
-                e.printStackTrace();
+                        } catch (Exception e) {
+                            errorMessageLabel.setText("Er is iets misgegaan. Probeer het later opnieuw.");
+                            e.printStackTrace();
+                        }
+                    }
+                }
             }
         }
-
     }
 
     private void sendUserToApi(User user) {
@@ -92,25 +99,44 @@ public class RegisterController {
         }
     }
 
-
-
     public boolean confirmPassword(String password, String confirmPassword){
-        if(password.equals(confirmPassword)&& password.length()>5){
+        if(password.equals(confirmPassword)){
             return true;
-        }else{
-
-            return false;
         }
+        errorMessageLabel.setText("Wachtwoorden zijn niet gelijk.");
+        return false;
     }
 
+    public boolean passwordCorrectTokenAmount(String password) {
+        if(password.length() > 5) {
+            return true;
+        }
+        errorMessageLabel.setText("Wachtwoord moet langer dan vijf tekens zijn.");
+        return false;
+    }
 
-
-    private boolean isEmailValid(String email){
+    public boolean isEmailValid(String email){
         if(email.contains("@")){
             return true;
-        }else{
-            return false;
         }
+        errorMessageLabel.setText("Foutief wachtwoord ingevuld.");
+        return false;
+
+    }
+
+    public boolean checkEmptyFields() {
+        ArrayList<TextField> tList = new ArrayList<>();
+        tList.add(emailTextfieldRegister);
+        tList.add(fullNameTextfieldRegister);
+        tList.add(passwordTextfieldRegister);
+        tList.add(confirmPasswordTextfieldRegister);
+        for(TextField t : tList) {
+            if(t.getText().isEmpty() || t.getText() == null) {
+                errorMessageLabel.setText("Niet alle velden zijn ingevuld.");
+                return false;
+            }
+        }
+        return true;
     }
 
     @FXML

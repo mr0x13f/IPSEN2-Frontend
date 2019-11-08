@@ -52,7 +52,7 @@ public class OverviewTabView implements Observer, Initializable {
         rateColumn.setCellValueFactory(new PropertyValueFactory<>("TotalRate"));
         isBilledColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
 
-        overviewTabController = OverviewTabController.getInstance();
+        overviewTabController = new OverviewTabController();
         overviewTabController.getJourneyList().attachObserver(this);
         overviewTable.setItems(overviewTabController.getJourneyList().getJourneys());
 

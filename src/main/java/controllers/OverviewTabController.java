@@ -20,15 +20,15 @@ public class OverviewTabController {
     private Tab overviewTab;
     private JourneyList jList;
     private JourneyController journeyController;
-    private static OverviewTabController overviewTabController;
+    //private static OverviewTabController overviewTabController;
     private String userCredentials;
 
-    public static synchronized OverviewTabController getInstance(){
+/*    public static synchronized OverviewTabController getInstance(){
         if(overviewTabController == null){
             overviewTabController = new OverviewTabController();
         }
         return overviewTabController;
-    }
+    }*/
 
 
 
