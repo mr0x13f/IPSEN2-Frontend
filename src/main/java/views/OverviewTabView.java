@@ -38,7 +38,7 @@ public class OverviewTabView implements Observer, Initializable {
     @FXML private TableColumn<Journey, String> destinationColumn;
     @FXML private TableColumn<Journey, String> rateColumn;
     @FXML private TableColumn<Journey, String> isBilledColumn;
-    public JourneyController journeyController;
+    public JourneyController journeyController = new JourneyController();
     public OverviewTabController overviewTabController;
 
     @Override
@@ -51,7 +51,7 @@ public class OverviewTabView implements Observer, Initializable {
         rateColumn.setCellValueFactory(new PropertyValueFactory<>("Rate"));
         isBilledColumn.setCellValueFactory(new PropertyValueFactory<>("IsBilled"));
 
-        overviewTabController = new OverviewTabController();
+        overviewTabController = OverviewTabController.getInstance();
         overviewTabController.getJourneyList().attachObserver(this);
         overviewTable.setItems(overviewTabController.getJourneyList().getJourneys());
 
@@ -80,8 +80,7 @@ public class OverviewTabView implements Observer, Initializable {
     private void deleteJourney(ActionEvent event){
         Journey selectedJourney = overviewTable.getSelectionModel().getSelectedItem();
         String journeyId = selectedJourney.getJourneyId();
-        System.out.println(journeyId);
-        System.out.println(overviewTabController.getUserCredentials());
+        System.out.println(journeyId + "   " + overviewTabController.getUserCredentials());
         journeyController.DELETEJourney(journeyId, overviewTabController.getUserCredentials());
 
         overviewTable.getItems().removeAll(selectedJourney);

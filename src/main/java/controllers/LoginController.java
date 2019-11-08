@@ -67,7 +67,7 @@ public class LoginController {
             apiConnection.setRequestProperty ("Authorization", basicAuth);
 
             int status = apiConnection.getResponseCode();
-            System.out.println(status);
+            System.out.println("Login response code: " + status);
 
             reader = new BufferedReader(new InputStreamReader(apiConnection.getInputStream()));
             while((line = reader.readLine()) != null ) {

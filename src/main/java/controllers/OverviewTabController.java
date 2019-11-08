@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Tab;
 import models.Journey;
 import models.JourneyList;
+import views.OverviewTabView;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -22,7 +23,7 @@ public class OverviewTabController {
     private static OverviewTabController overviewTabController;
     private String userCredentials;
 
-    public static OverviewTabController getInstance(){
+    public static synchronized OverviewTabController getInstance(){
         if(overviewTabController == null){
             overviewTabController = new OverviewTabController();
         }

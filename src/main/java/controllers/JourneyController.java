@@ -41,7 +41,8 @@ public class JourneyController {
             HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
             connection.setRequestMethod("DELETE");
             //System.out.println(Base64.getEncoder().encode(userCredentials.getBytes()));
-            connection.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encode(userCredentials.getBytes()));
+            String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+            connection.setRequestProperty("Authorization", basicAuth);
             connection.setRequestProperty("Accept", "application/json");
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setDoOutput(true);
