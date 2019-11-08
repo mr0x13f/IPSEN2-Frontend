@@ -78,6 +78,8 @@ public class Journey{
 
     //DEZE GETTERS NIET VERWIJDEREN!!!
 
+    public String getJourneyId() { return this.journeyId; }
+
     public String getProjectId() {
         return this.projectId;
     }

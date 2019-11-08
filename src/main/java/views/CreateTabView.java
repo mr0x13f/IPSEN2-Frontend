@@ -82,7 +82,7 @@ public class CreateTabView {
      * @version 8-11-2019
      */
     @FXML
-    private void voertuigGebruiken() {
+    private void useVehicle() {
         try {
             FileReader reader = new FileReader("savedVehicles.json");
             Vehicle savedVehicle = gson.fromJson(reader, Vehicle.class);
