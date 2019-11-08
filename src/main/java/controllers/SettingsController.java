@@ -66,6 +66,8 @@ public class SettingsController {
             Stage stage = (Stage) settingsPane.getScene().getWindow();
             Parent loginScene = FXMLLoader.load(getClass().getResource("/views/loginView.fxml"));
             stage.setScene(new Scene(loginScene, 1200, 900));
+            LoginController.username = "";
+            LoginController.password = "";
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -74,7 +76,7 @@ public class SettingsController {
     @FXML
     private void deleteAccount() {
         try {
-            URL apiUrl = new URL("http://localhost:8080/journey");
+            URL apiUrl = new URL("http://localhost:8080/user");
             apiConnection = (HttpURLConnection) apiUrl.openConnection();
 
             String userCredentials = LoginController.username + ":" + LoginController.password;

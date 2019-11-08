@@ -26,7 +26,7 @@ public class Journey{
     private double rate;
     private String projectId;
     private String creatorId;
-    private double total;
+    private static double total;
     private static String projectName;
     private static String previousProjectId;
     private static ProjectList pList = new ProjectList();
