@@ -1,11 +1,16 @@
 package views;
 
+import com.google.gson.Gson;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import controllers.CreateTabController;
+import models.Vehicle;
+import services.GsonService;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -65,5 +70,22 @@ public class CreateTabView {
         catch (NumberFormatException e) {
             System.out.println("Not a number");
         }
+    }
+
+    @FXML
+    private void voertuigGebruiken() {
+
+        Gson gson = new Gson();
+
+        try {
+            FileReader reader = new FileReader("savedVehicles.json");
+            Vehicle savedVehicle = gson.fromJson(reader, Vehicle.class);
+            textLicensePlate.setText(savedVehicle.getLicensePlate());
+        }
+        catch(FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
     }
 }
