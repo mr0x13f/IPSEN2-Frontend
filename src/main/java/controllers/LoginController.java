@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import models.Journey;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -35,6 +36,9 @@ public class LoginController {
     @FXML private Button autoLoginButton;
     private String email;
     private String password;
+    private static OverviewTabController overviewTabController = OverviewTabController.getInstance();
+
+
 
     @FXML void autoLogin() throws IOException{
         connectToApi("nigerfagoot@gmail.com:wachtwoord");
@@ -45,6 +49,7 @@ public class LoginController {
 
     public void connectToApi(String userCredentials) {  //username:password
 
+        overviewTabController.setUserCredentials(userCredentials);
         BufferedReader reader;
         String line;
         StringBuffer responseContent = new StringBuffer();
@@ -91,6 +96,11 @@ public class LoginController {
             e.printStackTrace();
         }
         stage.setScene(new Scene(overviewScene, 1200, 900));
+    }
+
+    private void sendUserCredentials(String userCredentials){
+
+
     }
 
     @FXML

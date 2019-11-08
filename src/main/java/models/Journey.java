@@ -66,7 +66,7 @@ public class Journey{
         //this.observers = new ArrayList<Observer>();
     }
 
-    //DEZE GETTERS NIET VERWIJDEREN!!!
+    //DEZE GETTERS NIET VERWIJDEREN!!! IS VOOR DE TABEL
 
     public String getProjectId() {
         return this.projectId;
@@ -91,6 +91,10 @@ public class Journey{
     public boolean getIsBilled() {
         return this.isBilled;
     }
+
+    ///
+
+    public String getJourneyId() { return this.journeyId; }
 
 
 }

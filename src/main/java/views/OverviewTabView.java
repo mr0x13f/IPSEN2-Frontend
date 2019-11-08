@@ -4,16 +4,21 @@ import controllers.JourneyController;
 import controllers.OverviewTabController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.Cursor;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import models.Journey;
 import models.JourneyList;
 import observables.Observable;
 import observers.Observer;
 
+import javax.swing.*;
 import java.net.URL;
 import java.util.Random;
 import java.util.ResourceBundle;
@@ -50,7 +55,40 @@ public class OverviewTabView implements Observer, Initializable {
         overviewTabController.getJourneyList().attachObserver(this);
         overviewTable.setItems(overviewTabController.getJourneyList().getJourneys());
 
+        ContextMenu contextMenu = new ContextMenu();
+        MenuItem menuItem = new MenuItem("Delete");
+        menuItem.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
+            public void handle(ActionEvent event){
+                deleteJourney(event);
+            }
+
+        });
+        contextMenu.getItems().add(menuItem);
+
+        overviewTable.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                if(event.getButton() == MouseButton.SECONDARY){
+                    contextMenu.show(overviewTable, event.getScreenX(), event.getScreenY());
+                }
+            }
+        });
+
     }
+
+    private void deleteJourney(ActionEvent event){
+        Journey selectedJourney = overviewTable.getSelectionModel().getSelectedItem();
+        String journeyId = selectedJourney.getJourneyId();
+        System.out.println(journeyId);
+        System.out.println(overviewTabController.getUserCredentials());
+        journeyController.DELETEJourney(journeyId, overviewTabController.getUserCredentials());
+
+        overviewTable.getItems().removeAll(selectedJourney);
+
+    }
+
+
 
     private void sortByMonth(){
 

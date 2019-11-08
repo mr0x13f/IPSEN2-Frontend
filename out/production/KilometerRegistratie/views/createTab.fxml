@@ -26,7 +26,7 @@
                 <TextField fx:id="textParkingCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
                 <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Other cost" />
                 <TextField fx:id="textOtherCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
-                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Date  yyyy-mm-dd hh:mm:ss.000" />
+                <Label style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Date (yyyy-mm-dd hh:mm:ss.000)" />
                 <TextField fx:id="textDate" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px;" />
                 <Button mnemonicParsing="false" onAction="#saveJourney" text="Opslaan"/>
             </children>
