@@ -15,7 +15,7 @@
                 <TextField fx:id="textKilometers" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Kenteken auto" />
                 <TextField fx:id="textLicensePlate" prefHeight="0.0" prefWidth="700.0" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
-                <Button fx:id="voertuigKnop" mnemonicParsing="false" onAction="#voertuigGebruiken" style="-fx-pref-width:100px; -fx-max-width: 200px; -fx-spacing: 5; -fx-font-size: 0.4em; -fx-background-color: #AAA; -fx-text-fill: #FFF; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50" text="Opgeslagen auto gebruiken" />
+                <Button fx:id="vehicleButton" mnemonicParsing="false" onAction="#useVehicle" style="-fx-pref-width:100px; -fx-max-width: 200px; -fx-spacing: 5; -fx-font-size: 0.4em; -fx-background-color: #AAA; -fx-text-fill: #FFF; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50" text="Opgeslagen auto gebruiken" />
                 <Label style="-fx-font-size: 0.5em" text="Bestemming" />
                 <TextField fx:id="textDestination" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Tarief per kilometer" />

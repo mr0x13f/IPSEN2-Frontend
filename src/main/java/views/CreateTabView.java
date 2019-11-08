@@ -73,7 +73,7 @@ public class CreateTabView {
     }
 
     @FXML
-    private void voertuigGebruiken() {
+    private void useVehicle() {
 
         Gson gson = new Gson();
 
