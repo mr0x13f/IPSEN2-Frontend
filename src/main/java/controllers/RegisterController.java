@@ -24,7 +24,7 @@ public class RegisterController {
     @FXML private TextField emailTextfieldRegister;
     @FXML private TextField fullNameTextfieldRegister;
     @FXML private TextField passwordTextfieldRegister;
-    @FXML private TextField confirmPasswordTextfieldRegsiter;
+    @FXML private TextField confirmPasswordTextfieldRegister;
     @FXML private Button registerButton;
     @FXML private Label alreadyHasAccount;
 
@@ -38,7 +38,7 @@ public class RegisterController {
         String email = emailTextfieldRegister.getText();
         String fullName = fullNameTextfieldRegister.getText();
         String userPassword = passwordTextfieldRegister.getText();
-        String confirmPassword = confirmPasswordTextfieldRegsiter.getText();
+        String confirmPassword = confirmPasswordTextfieldRegister.getText();
 
 
         if(confirmPassword(userPassword,confirmPassword)&&isEmailValid(email)){
