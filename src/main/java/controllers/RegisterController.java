@@ -137,7 +137,7 @@ public class RegisterController {
         if(email.contains("@")){
             return true;
         }
-        errorMessageLabel.setText("Foutief wachtwoord ingevuld.");
+        errorMessageLabel.setText("Foutief email ingevuld.");
         return false;
 
     }

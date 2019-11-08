@@ -29,11 +29,6 @@ public class LoginController {
     public static String username;
     public static String password;
 
-
-    @FXML void autoLogin() {
-        loginContinue("nigerfagoot@gmail.com", "wachtwoord");
-    }
-
     /**
      *Takes information from the input fields and tries to log in using the Login method.
      */
@@ -62,7 +57,6 @@ public class LoginController {
             }
         }
         else {
-            // TODO: Iets laten zien dat het verkeerd is ofzo
             System.out.println("LoginController: LOGIN ERROR" );
         }
     }

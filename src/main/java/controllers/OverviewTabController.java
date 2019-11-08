@@ -23,15 +23,6 @@ public class OverviewTabController {
     //private static OverviewTabController overviewTabController;
     private String userCredentials;
 
-/*    public static synchronized OverviewTabController getInstance(){
-        if(overviewTabController == null){
-            overviewTabController = new OverviewTabController();
-        }
-        return overviewTabController;
-    }*/
-
-
-
     public OverviewTabController() {
         journeyController = new JourneyController();
     }

@@ -44,11 +44,6 @@
                   <Font name="System Italic" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="autoLoginButton" layoutX="447.0" layoutY="527.0" mnemonicParsing="false" onAction="#autoLogin" text="auto login (voor testen)" style="-fx-background-color: #EEEEEE; -fx-border-width: 0">
-               <font>
-                  <Font size="28.0" />
-               </font>
-            </Button>
          </children></Pane>
     </children>
 </AnchorPane>

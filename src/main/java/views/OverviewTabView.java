@@ -88,16 +88,6 @@ public class OverviewTabView implements Observer, Initializable {
 
     }
 
-
-
-    private void sortByMonth(){
-
-    }
-
-    private void sortByYear(){
-
-    }
-
     @Override
     public void update(Observable observable) {
         overviewTabController.getJourneyList().getJourneysFromDataBase();
