@@ -29,7 +29,7 @@
                                      <Label alignment="CENTER" prefHeight="31.0" prefWidth="32.0" style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="-" />
                                      <TextField fx:id="LicenseInput3" maxWidth="586.0" prefHeight="15.0" prefWidth="130.0" promptText="00" style="-fx-max-width: 350px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                                  </HBox>
-                              <Button fx:id="AddCar" onAction="#combineCarDetails" prefHeight="31.0" prefWidth="200.0" text="Add car" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50;">
+                              <Button fx:id="AddCar" onAction="#combineCarDetails" prefHeight="31.0" prefWidth="200.0" text="Opslaan" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50;">
                                   <font>
                                       <Font size="20.0" />
                                   </font>
@@ -52,11 +52,11 @@
                </children></HBox>
             <HBox prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox prefHeight="200.0" prefWidth="340.0">
+                  <VBox prefHeight="200.0" prefWidth="340.0" style="-fx-padding: 20; -fx-spacing: 10">
                      <children>
-                                 <Label fx:id="Rate" style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Rate" />
-                                 <TextField fx:id="textRate" maxWidth="586.0" prefHeight="31.0" prefWidth="-Infinity" promptText="voer getal in" style="-fx-max-width: 350px; -fx-start-margin: 3px;" />
-                              <Button fx:id="AddDetails" onAction="#combineDetails" prefHeight="31.0" prefWidth="200.0" text="Toevoegen rate" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50;">
+                                 <Label fx:id="Rate" style="-fx-font-size: 0.5em; -fx-padding: 4px;" text="Tarief" />
+                                 <TextField fx:id="textRate" maxWidth="586.0" prefHeight="31.0" prefWidth="-Infinity" promptText="0.00" style="-fx-max-width: 350px; -fx-start-margin: 3px; -fx-padding: 4px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                              <Button fx:id="AddRate" prefHeight="31.0" prefWidth="200.0" text="Opslaan" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50">
                                   <font>
                                       <Font size="20.0" />
                                   </font>
