@@ -11,7 +11,7 @@
     <children>
         <VBox prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F9F9F9; -fx-border-width: 0; -fx-padding: 8 0 0 10; -fx-spacing: 5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Label style="-fx-font-size: 0.5em" text="Distance in KM" />
+                <Label style="-fx-font-size: 0.5em" text="Afstand in kilometers" />
                 <TextField fx:id="textKilometers" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Kenteken auto" />
                 <TextField fx:id="textLicensePlate" prefHeight="0.0" prefWidth="700.0" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
@@ -29,7 +29,7 @@
                 <Label style="-fx-font-size: 0.5em" text="Overige kosten" />
                 <TextField fx:id="textOtherCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Datum" />
-                <DatePicker fx:id="dateChooser" showWeekNumbers="false" style="-fx-font-size: 1.0em; -fx-max-width: 300px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <DatePicker fx:id="dateChooser" showWeekNumbers="false" style="-fx-max-width: 300px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Button mnemonicParsing="false" onAction="#saveJourney" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50; -fx-font-size: 0.7em" text="Opslaan" />
             </children>
         </VBox>

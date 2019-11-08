@@ -12,7 +12,7 @@
                 <Image url="@../images/digitale_factuur.png" />
             </image>
         </ImageView>
-      <Pane layoutY="215.0" prefHeight="700.0" prefWidth="1220.0" style="-fx-background-color: #BB3E31;">
+      <Pane layoutY="215.0" prefHeight="700.0" prefWidth="1220.0" style="-fx-background-color: #BB3E31">
          <children>
               <TextField fx:id="emailTextfieldLogin" layoutX="486.0" layoutY="56.0" style="-fx-background-color: #EEE; -fx-border-width: 0px; -fx-border-color: #F85D4D; -fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50">
                   <font>
