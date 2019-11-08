@@ -1,8 +1,13 @@
 package models;
 
+import com.google.gson.reflect.TypeToken;
+import controllers.LoginController;
 import observables.Observable;
 import observers.Observer;
+import services.GsonService;
+import services.HTTPRequestService;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,6 +26,11 @@ public class Journey{
     private double rate;
     private String projectId;
     private String creatorId;
+    private double total;
+    private static String projectName;
+    private static String previousProjectId;
+    private static ProjectList pList = new ProjectList();
+
 
     /**
      * Constructor excluding journeyID and creatorId
@@ -76,8 +86,10 @@ public class Journey{
         return this.kilometers;
     }
 
-    public String getDate() {
-        return this.date;
+    public String getDateTime() {
+        String[] splitDate = date.split(" ");
+        String[] splitDay = splitDate[0].split("-");
+        return splitDay[2] + " - " + splitDay[1] + " - " + splitDay[0];
     }
 
     public String getDestination() {
@@ -90,6 +102,27 @@ public class Journey{
 
     public boolean getIsBilled() {
         return this.isBilled;
+    }
+
+    public String getStatus() {
+        if(this.isBilled == false) {
+            return "Niet gefactureerd";
+        }
+        return "Gefactureerd";
+    }
+
+    public String getProjectName() {
+        String name = "";
+        for(Project p : pList.getProjects()) {
+            if(projectId.equals(p.getProjectId())) {
+                name = p.getName();
+            }
+        }
+        return name;
+    }
+
+    public double getTotalRate() {
+        return (Math.round((this.kilometers * this.rate + this.parkingCost + this.otherCost)* 100.0) / 100.0);
     }
 
 

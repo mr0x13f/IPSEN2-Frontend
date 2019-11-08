@@ -2,14 +2,23 @@ package models;
 
 public class Project {
 
-    private int projectId;
+    private String projectId;
     private String name;
+    private String companyId;
 
-    public int getProjectId() {
+    public Project(String projectId, String name, String companyId) {
+        this.projectId = projectId;
+        this.name = name;
+        this.companyId = companyId;
+    }
+
+    public Project() {}
+
+    public String getProjectId() {
         return projectId;
     }
 
-    public void setProjectId(int projectId) {
+    public void setProjectId(String projectId) {
         this.projectId = projectId;
     }
 

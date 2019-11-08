@@ -57,4 +57,8 @@ public class HTTPRequestService {
         return setupRequest("http://localhost:8080/journey", "GET", userCredentials);
     }
 
+    public static String getProjects(String userCredentials) {
+        return setupRequest("http://localhost:8080/project", "GET", userCredentials);
+    }
+
 }

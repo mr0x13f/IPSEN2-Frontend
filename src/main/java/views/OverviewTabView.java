@@ -39,12 +39,12 @@ public class OverviewTabView implements Observer, Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //setup for the columns in the table
-        projectColumn.setCellValueFactory(new PropertyValueFactory<>("ProjectId"));
+        projectColumn.setCellValueFactory(new PropertyValueFactory<>("ProjectName"));
         distanceColumn.setCellValueFactory(new PropertyValueFactory<>("kilometers"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("Date"));
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("DateTime"));
         destinationColumn.setCellValueFactory(new PropertyValueFactory<>("Destination"));
-        rateColumn.setCellValueFactory(new PropertyValueFactory<>("Rate"));
-        isBilledColumn.setCellValueFactory(new PropertyValueFactory<>("IsBilled"));
+        rateColumn.setCellValueFactory(new PropertyValueFactory<>("TotalRate"));
+        isBilledColumn.setCellValueFactory(new PropertyValueFactory<>("Status"));
 
         overviewTabController = new OverviewTabController();
         overviewTabController.getJourneyList().attachObserver(this);
