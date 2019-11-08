@@ -35,7 +35,7 @@ public class CreateTabController {
         if(checkAllValues(kilometers, parkingCost, otherCost, rate)) {
             newJourney = new Journey(kilometers, destination, description, date, licensePlate, isBilled, parkingCost, otherCost, rate, projectId);
 
-            pushJourneyToApi("nigerfagoot@gmail.com:wachtwoord", newJourney);
+            pushJourneyToApi(LoginController.username + ":" + LoginController.password, newJourney);
             journeyController.getJourneyList().notifyObservers();
             System.out.println("Post succesvol");
         }
