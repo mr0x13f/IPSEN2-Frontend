@@ -18,7 +18,11 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-
+/**
+ * This is the controller for registering a new user.
+ * @author Stan, Jochem
+ * @Version 8-11-2019
+ */
 public class RegisterController {
 
     @FXML private TextField emailTextfieldRegister;
@@ -28,24 +32,22 @@ public class RegisterController {
     @FXML private Button registerButton;
     @FXML private Label alreadyHasAccount;
 
-
-
+    /**
+     * This method takes the user input and tries to create a new user from it.
+     * It starts by validating the input, after which it sends the new user to the API.
+     * @author Stan, Jochem
+     * @version 8-11-2019
+     */
     @FXML
     private void registerNewUser(){
-        System.out.println("Try to create new user");
-
-
         String email = emailTextfieldRegister.getText();
         String fullName = fullNameTextfieldRegister.getText();
         String userPassword = passwordTextfieldRegister.getText();
         String confirmPassword = confirmPasswordTextfieldRegister.getText();
 
-
         if(confirmPassword(userPassword,confirmPassword)&&isEmailValid(email)){
             try{
-
                 User user = new User(fullName ,email, userPassword);
-
                 sendUserToApi(user);
                 goToLoginView();
 
@@ -53,9 +55,13 @@ public class RegisterController {
                 e.printStackTrace();
             }
         }
-
     }
 
+    /**
+     * Connects to API in order to register a new user.
+     * @author Stan, Jochem
+     * @version 8-11-2019
+     */
     private void sendUserToApi(User user) {
         System.out.println("try to send user to API");
         String url = "http://localhost:8080/user/register";
@@ -92,17 +98,22 @@ public class RegisterController {
         }
     }
 
-
-
+    /**
+     * Checks if the value in both password fields are identical and of the required length.
+     * @author Stan, Jochem
+     * @version 8-11-19
+     * @param password
+     * @param confirmPassword
+     * @return
+     */
     public boolean confirmPassword(String password, String confirmPassword){
         if(password.equals(confirmPassword)&& password.length()>5){
             return true;
-        }else{
-
+        }
+        else{
             return false;
         }
     }
-
 
 
     private boolean isEmailValid(String email){

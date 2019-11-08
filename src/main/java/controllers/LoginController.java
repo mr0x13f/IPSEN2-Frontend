@@ -29,43 +29,52 @@ public class LoginController {
     public static String username;
     public static String password;
 
+
     @FXML void autoLogin() {
-
-        login("nigerfagoot@gmail.com", "wachtwoord");
+        loginContinue("nigerfagoot@gmail.com", "wachtwoord");
     }
 
+    /**
+     *Takes information from the input fields and tries to log in using the Login method.
+     */
     @FXML void login() {
-
-        login(emailTextfieldLogin.getText(), passwordTextfieldLogin.getText());
-
+        loginContinue(emailTextfieldLogin.getText(), passwordTextfieldLogin.getText());
     }
 
-    private void login(String username, String password) {
+    /**
+     * Connects to the API to log in and continues to the home screen
+     * @author Stan, Jochem, Tim.v.H
+     * @version 8-11-19
+     */
+    private void loginContinue(String username, String password) {
 
         this.username = username;
         this.password = password;
 
         if (authenticate(username, password)) {
-
             // Login successful; show masterview
             try {
                 Stage stage = (Stage) noAccountLabel.getScene().getWindow();
                 Parent overviewScene = FXMLLoader.load(getClass().getResource("/views/masterView.fxml"));
                 stage.setScene(new Scene(overviewScene, 1200, 900));
             } catch (java.io.IOException e) {
-
+                e.printStackTrace();
             }
-
-        } else {
-
-            // Login error
-
+        }
+        else {
             // TODO: Iets laten zien dat het verkeerd is ofzo
             System.out.println("LoginController: LOGIN ERROR" );
-
         }
     }
 
+    /**
+     * Authenticates the login information of the user
+     * @author Stan
+     * @version 8-11-2019
+     * @param username
+     * @param password
+     * @return
+     */
     public boolean authenticate(String username, String password) {
 
         BufferedReader reader;
