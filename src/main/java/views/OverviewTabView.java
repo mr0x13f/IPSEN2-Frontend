@@ -1,6 +1,7 @@
 package views;
 
 import controllers.JourneyController;
+import controllers.LoginController;
 import controllers.OverviewTabController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -81,7 +82,7 @@ public class OverviewTabView implements Observer, Initializable {
         Journey selectedJourney = overviewTable.getSelectionModel().getSelectedItem();
         String journeyId = selectedJourney.getJourneyId();
         System.out.println(journeyId + "   " + overviewTabController.getUserCredentials());
-        journeyController.DELETEJourney(journeyId, overviewTabController.getUserCredentials());
+        journeyController.deleteJourney(journeyId, LoginController.username + ":" + LoginController.password);
 
         overviewTable.getItems().removeAll(selectedJourney);
 

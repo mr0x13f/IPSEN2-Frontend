@@ -45,7 +45,7 @@ public class OverviewTabController {
     }
 
     public void deleteJourneyFromDB(String journeyId){
-        journeyController.DELETEJourney(journeyId, getUserCredentials());
+        journeyController.deleteJourney(journeyId, LoginController.username + ":" + LoginController.password);
     }
 
     public void setUserCredentials(String userCredentials) {

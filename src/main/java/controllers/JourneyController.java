@@ -33,7 +33,7 @@ public class JourneyController {
 
     public void EDITJourney(){}
 
-    public void DELETEJourney(String journeyId, String userCredentials) {
+    public void deleteJourney(String journeyId, String userCredentials) {
 
         String url = "http://localhost:8080/journey/" + journeyId;
         try {
