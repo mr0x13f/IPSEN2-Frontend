@@ -7,17 +7,17 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import controllers.ManagementTabController;
 import models.Project;
 import models.Vehicle;
+import models.Rate;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ManagementTabView implements Initializable {
+public class ManagementTabView {
 
     ManagementTabController managementTabController = new ManagementTabController();
 
@@ -67,26 +67,7 @@ public class ManagementTabView implements Initializable {
 
     }
 
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        DeleteCarBox.setValue("---");
-        DeleteCarBox.setItems(DeleteCarList);
-    }
-
     @FXML
-    public void combineDetails() {
-        String Company = CompanyBox.getValue();
-        String Project = ProjectBox.getValue();
-        try {
-            float Rate = Float.valueOf(textRate.getText());
-
-            managementTabController.combineDetails(Company, Project, Rate);
-        } catch (Exception e) {
-            System.out.println("Het moet een getal zijn");
-        }
-    }
-
     public void combineCarDetails() {
         String carName = CarInput.getText();
         String licenseCar = LicenseInput1.getText() + "-" + LicenseInput2.getText() + "-" + LicenseInput3.getText();
@@ -95,74 +76,16 @@ public class ManagementTabView implements Initializable {
 
         managementTabController.createVehicle(vehicle);
         managementTabController.readVehicleFile();
-
-        //Adding the cars to the delete dropdown. so you can delete the car afterwards if you want to
-        //addCarToDeleteCars();
-
     }
 
-    public void addProjectToDropdown() {
-        String projectName = addProjectTextField.getText();
-        ProjectList.add(projectName);
-        addProjectTextField.setText("");
+    @FXML
+    public void saveNewRate() {
+        double userRate = Double.parseDouble(textRate.getText());
+
+        Rate rate = new Rate(userRate);
+
+        managementTabController.createRate(rate);
     }
-
-    public void addCarToDeleteCars() {
-        String carName = CarInput.getText();
-
-        DeleteCarList.add(carName);
-    }
-
-
-
-    private void addVehicle() {
-
-    }
-
-    private void updateVehicle() {
-
-    }
-
-    private void deleteVehicle() {
-
-    }
-
-    private void addRate() {
-
-    }
-
-    private void updateRate() {
-
-    }
-
-    private void deleteRate() {
-
-    }
-
-    private void addCompany() {
-
-    }
-
-    private void updateCompany() {
-
-    }
-
-    private void deleteCompany() {
-
-    }
-
-    private void addProject() {
-
-    }
-
-    private void updateProject() {
-
-    }
-
-    private void deleteProject() {
-
-    }
-
 }
 
 

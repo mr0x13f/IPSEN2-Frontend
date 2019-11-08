@@ -2,28 +2,13 @@ package models;
 
 public class Rate {
 
-    private String name;
-    //Could be an double
-    private float amount;
+    private double amount;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public Rate( double amount) {
+        this.amount = amount;
     }
 
     public double getAmount() {
         return amount;
-    }
-
-    public void setAmount(float amount) {
-        this.amount = amount;
-    }
-
-    public void yourRate(float rate) {
-        amount = rate;
-        System.out.println("AMOUNT: "+amount);
     }
 }

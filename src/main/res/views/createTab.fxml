@@ -12,22 +12,23 @@
         <VBox prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #F9F9F9; -fx-border-width: 0; -fx-padding: 8 0 0 10; -fx-spacing: 5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label style="-fx-font-size: 0.5em" text="Afstand in kilometers" />
-                <TextField fx:id="textKilometers" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <TextField fx:id="textKilometers" promptText="0" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Kenteken auto" />
-                <TextField fx:id="textLicensePlate" prefHeight="0.0" prefWidth="700.0" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <TextField fx:id="textLicensePlate" promptText="12-34-AB" prefHeight="0.0" prefWidth="700.0" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Button fx:id="voertuigKnop" mnemonicParsing="false" onAction="#voertuigGebruiken" style="-fx-pref-width:100px; -fx-max-width: 200px; -fx-spacing: 5; -fx-font-size: 0.4em; -fx-background-color: #AAA; -fx-text-fill: #FFF; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50" text="Opgeslagen auto gebruiken" />
                 <Label style="-fx-font-size: 0.5em" text="Bestemming" />
                 <TextField fx:id="textDestination" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Tarief per kilometer" />
-                <TextField fx:id="textRate" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <TextField fx:id="textRate" promptText="0.00" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <Button fx:id="rateButton" mnemonicParsing="false" onAction="#useRate" style="-fx-pref-width:100px; -fx-max-width: 200px; -fx-spacing: 5; -fx-font-size: 0.4em; -fx-background-color: #AAA; -fx-text-fill: #FFF; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50" text="Opgeslagen tarief gebruiken" />
                 <Label style="-fx-font-size: 0.5em" text="Project ID" />
                 <TextField fx:id="textProjectId" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" text="91afb2be-fc88-11e9-a888-b827eb4b9e47" />
                 <Label style="-fx-font-size: 0.5em" text="Beschrijving" />
                 <TextField fx:id="textDescription" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Parkeerkosten" />
-                <TextField fx:id="textParkingCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <TextField fx:id="textParkingCost" promptText="0.00" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Overige kosten" />
-                <TextField fx:id="textOtherCost" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
+                <TextField fx:id="textOtherCost" promptText="0.00" style="-fx-font-size: 1.5em; -fx-max-width: 700px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Label style="-fx-font-size: 0.5em" text="Datum" />
                 <DatePicker fx:id="dateChooser" showWeekNumbers="false" style="-fx-max-width: 300px; -fx-start-margin: 3px; -fx-background-color: #EEE; -fx-border-color: #BBB; -fx-border-width: 1px" />
                 <Button mnemonicParsing="false" onAction="#saveJourney" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50; -fx-font-size: 0.7em" text="Opslaan" />

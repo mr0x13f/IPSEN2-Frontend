@@ -6,8 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsController">
    <children>
-      <Label fx:id="logOutLabel" alignment="CENTER" layoutX="260.0" layoutY="327.0" onMouseClicked="#logOut" prefHeight="27.0" prefWidth="66.0" text="Log out" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="260.0" />
-      <Button layoutX="266.0" layoutY="222.0" mnemonicParsing="false" onAction="#logOut" text="Uitloggen" />
-      <Button layoutX="238.0" layoutY="277.0" mnemonicParsing="false" onAction="#deleteAccount" text="Account verwijderen" />
+      <Button layoutX="266.0" layoutY="222.0" mnemonicParsing="false" onAction="#logOut" text="Uitloggen" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50"/>
+      <Button layoutX="238.0" layoutY="277.0" mnemonicParsing="false" onAction="#deleteAccount" text="Account verwijderen" style="-fx-text-fill: #fff; -fx-background-color: #E74C3C; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50"/>
    </children>
 </AnchorPane>

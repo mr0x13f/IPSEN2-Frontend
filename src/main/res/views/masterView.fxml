@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.Button?>
 <SplitPane dividerPositions="0.29797979797979796" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="1200.0" prefHeight="0.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SettingsController" stylesheets="/css/masterViewStyleSheet.css">
   <items>
     <AnchorPane fx:id="settingsBarPane" maxWidth="100.0" minHeight="0.0" minWidth="100.0" prefHeight="0.0" prefWidth="0.0" style="-fx-background-color: #fb4c3c;;">
@@ -31,14 +32,8 @@
          <children>
             <AnchorPane fx:id="settingsPane" layoutX="-8.0" layoutY="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="791.0" prefWidth="1090.0" visible="false">
                <children>
-                  <Label fx:id="logOutLabel" alignment="CENTER" layoutX="400.0" layoutY="700.0" onMouseClicked="#logOut" prefHeight="27.0" prefWidth="290.0" style="-fx-background-color: #fb4c3c; -fx-border-width: 2; -fx-border-color: black;" text="Log out" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0">
-                     <font>
-                        <Font name="Yu Gothic UI Semibold" size="53.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Label>
+                   <Button layoutX="457.0" layoutY="410.0" mnemonicParsing="false" onAction="#logOut" text="Uitloggen" style="-fx-text-fill: #fff; -fx-font-size: 2em; -fx-background-color: #E74C3C; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50"/>
+                   <Button layoutX="400.0" layoutY="500.0" mnemonicParsing="false" onAction="#deleteAccount" text="Account verwijderen" style="-fx-text-fill: #fff; -fx-font-size: 2em; -fx-background-color: #E74C3C; -fx-border-width: 0px; fx-border-style: none; -fx-border-radius: 50; -fx-background-radius: 50"/>
                </children>
             </AnchorPane>
             <TabPane fx:id="tabPane" prefHeight="100.0" prefWidth="100.0" style="-fx-font-size: 3.0em; -fx-tab-min-width: 340px; -fx-tab-min-height: 60px; -fx-tab-max-height: 60px; -fx-tab-max-width: 500px;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

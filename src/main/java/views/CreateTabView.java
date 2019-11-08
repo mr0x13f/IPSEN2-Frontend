@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import controllers.CreateTabController;
+import models.Rate;
 import models.Vehicle;
 import services.GsonService;
 
@@ -17,7 +18,7 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * View for the create tab.
- * @version 17-10-2019
+ * @version 8-11-2019
  */
 public class CreateTabView {
 
@@ -31,11 +32,14 @@ public class CreateTabView {
     @FXML TextField textOtherCost;
     @FXML DatePicker dateChooser;
 
+    Gson gson = new Gson();
+
     CreateTabController createTabController = new CreateTabController();
 
     /**
      * Parses the input from textfields to their respective data formats and calls the 'saveJourney' method in the controller.
      * @author Stan
+     * @verison 6-11-2019
      */
     @FXML
     private void saveJourney(){
@@ -72,11 +76,13 @@ public class CreateTabView {
         }
     }
 
+    /**
+     * autofills the licenseplate with the saved vehicle
+     * @author Stan
+     * @version 8-11-2019
+     */
     @FXML
     private void voertuigGebruiken() {
-
-        Gson gson = new Gson();
-
         try {
             FileReader reader = new FileReader("savedVehicles.json");
             Vehicle savedVehicle = gson.fromJson(reader, Vehicle.class);
@@ -85,7 +91,17 @@ public class CreateTabView {
         catch(FileNotFoundException e) {
             e.printStackTrace();
         }
+    }
 
-
+    @FXML
+    private void useRate() {
+        try {
+            FileReader reader = new FileReader("savedRates.json");
+            Rate savedRate = gson.fromJson(reader, Rate.class);
+            textRate.setText(String.valueOf(savedRate.getAmount()));
+        }
+        catch(FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
